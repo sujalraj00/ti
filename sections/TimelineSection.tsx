@@ -33,13 +33,13 @@ export function TimelineSection() {
   ];
 
   return (
-    <section id="timeline" className="py-20 md:py-28 bg-dark-bg border-t border-gold-border/10 relative overflow-hidden">
+    <section id="timeline" className="py-24 md:py-32 bg-dark-bg border-t border-gold-border/10 relative overflow-hidden">
       <div className="bg-blob bottom-1/4 right-1/4" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Title Block */}
-        <div className="flex flex-col items-center text-center space-y-3 mb-16 md:mb-20">
+        <div className="flex flex-col items-center text-center space-y-3 mb-20 md:mb-24">
           <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">
             Our Journey
           </span>
@@ -52,7 +52,7 @@ export function TimelineSection() {
         {/* Timeline Path */}
         <div className="relative max-w-4xl mx-auto">
           {/* Vertical central spine line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[1px] bg-gold-border/30 transform md:-translate-x-1/2" />
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-gold/10 via-gold/40 to-gold/10 transform md:-translate-x-1/2" />
 
           <div className="space-y-12">
             {milestones.map((item, index) => {
@@ -66,22 +66,24 @@ export function TimelineSection() {
                   }`}
                 >
                   {/* Spine Node Pinpoint */}
-                  <div className="absolute left-4 md:left-1/2 w-3.5 h-3.5 bg-gold border-2 border-dark-bg rounded-full transform -translate-x-1/2 z-10 shadow-lg" />
+                  <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-dark-bg border-2 border-gold rounded-full transform -translate-x-1/2 z-10 shadow-[0_0_10px_rgba(197,168,92,0.4)] flex items-center justify-center">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gold animate-ping opacity-75" />
+                  </div>
 
                   {/* Empty Spacer Column for Desktop */}
                   <div className="hidden md:block md:w-1/2" />
 
                   {/* Content Column */}
-                  <div className="w-full md:w-1/2 pl-10 md:pl-0 md:px-8">
+                  <div className="w-full md:w-1/2 pl-10 md:pl-0 md:px-10">
                     <FadeIn direction={isEven ? "left" : "right"} delay={0.1}>
-                      <div className="p-6 bg-dark-surface/60 border border-gold-border/30 hover:border-gold/30 transition-all duration-300 relative">
+                      <div className="p-6 bg-dark-surface/40 border border-gold-border hover:border-gold/30 hover:shadow-2xl hover:shadow-black/50 transition-all duration-500 relative">
                         <span className="font-serif text-3xl font-bold text-gold block mb-1">
                           {item.year}
                         </span>
-                        <h3 className="font-serif text-base font-bold text-warm-white mb-2">
+                        <h3 className="font-serif text-lg font-bold text-warm-white mb-2">
                           {item.title}
                         </h3>
-                        <p className="text-xs text-warm-muted leading-relaxed font-sans font-light">
+                        <p className="text-xs md:text-sm text-warm-muted leading-relaxed font-sans font-light">
                           {item.description}
                         </p>
                       </div>

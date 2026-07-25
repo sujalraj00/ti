@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import CustomCursor from "@/components/CustomCursor";
+import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -55,11 +56,13 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-dark-bg text-warm-white font-sans selection:bg-gold selection:text-dark-bg">
-        <ScrollProgress />
-        <CustomCursor />
-        <Navbar />
-        <main className="flex-grow pt-[76px] lg:pt-[88px]">{children}</main>
-        <Footer />
+        <SmoothScrollProvider>
+          <ScrollProgress />
+          <CustomCursor />
+          <Navbar />
+          <main className="flex-grow pt-[76px] lg:pt-[88px]">{children}</main>
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

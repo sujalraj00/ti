@@ -14,10 +14,10 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
         ref={ref}
         className={cn(
           "p-6 md:p-8 rounded-none transition-all duration-500",
-          variant === "glass" && "bg-dark-surface/60 backdrop-blur-md border border-gold-border",
-          variant === "solid" && "bg-dark-surface border border-gold-border/40",
+          variant === "glass" && "glass-card",
+          variant === "solid" && "bg-dark-surface border border-gold-border/20 shadow-xl",
           variant === "borderless" && "bg-transparent border-none p-0",
-          hoverEffect && "hover:bg-dark-surface-hover/80 hover:border-gold/30 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/60",
+          hoverEffect && variant !== "glass" && "hover:bg-dark-surface-hover hover:border-gold/30 hover:-translate-y-1 hover:shadow-2xl",
           className
         )}
         {...props}

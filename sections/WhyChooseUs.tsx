@@ -29,14 +29,14 @@ export function WhyChooseUs() {
   ];
 
   return (
-    <section id="why-choose-us" className="py-20 md:py-28 bg-dark-bg border-t border-gold-border/10 relative overflow-hidden">
+    <section id="why-choose-us" className="py-24 md:py-32 bg-dark-bg border-t border-gold-border/10 relative overflow-hidden">
       {/* Background decoration blob */}
       <div className="bg-blob bottom-1/4 left-1/4" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Title Block */}
-        <div className="flex flex-col items-center text-center space-y-3 mb-16 md:mb-20">
+        <div className="flex flex-col items-center text-center space-y-3 mb-20 md:mb-24">
           <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">
             Corporate Values
           </span>
@@ -47,25 +47,25 @@ export function WhyChooseUs() {
         </div>
 
         {/* 2x2 Values Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {pillars.map((item, index) => {
             const Icon = item.icon;
             return (
               <FadeIn 
                 key={index} 
                 delay={index * 0.1}
-                direction={index % 2 === 0 ? "right" : "left"}
+                direction="up"
               >
-                <Card className="flex flex-col items-start space-y-4 group h-full relative overflow-hidden">
+                <Card className="flex flex-col items-start space-y-4 group h-full relative overflow-hidden" variant="glass">
                   {/* Left Highlight Indicator border appearing on hover */}
                   <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gold scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-bottom" />
                   
                   {/* Premium Gold Icon */}
-                  <div className="p-3 bg-dark-bg border border-gold-border/25 rounded-none text-gold group-hover:bg-gold group-hover:text-dark-bg transition-all duration-500">
+                  <div className="p-3 bg-dark-bg border border-gold-border text-gold group-hover:bg-gold group-hover:text-dark-bg transition-all duration-500">
                     <Icon className="w-5 h-5" />
                   </div>
 
-                  <h3 className="font-serif text-lg md:text-xl font-bold text-warm-white group-hover:text-gold transition-colors duration-300">
+                  <h3 className="font-serif text-xl font-bold text-warm-white group-hover:text-gold transition-colors duration-300">
                     {item.title}
                   </h3>
                   

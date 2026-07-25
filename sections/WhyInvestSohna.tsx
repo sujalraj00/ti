@@ -23,17 +23,17 @@ export function WhyInvestSohna() {
     },
     {
       icon: Award,
-      title: "Educational & Commercial Nucleus",
+      title: "Educational & Commercial Hub",
       description: "Home to premium global education institutes like GD Goenka World School and K.R. Mangalam, alongside upcoming institutional IT zones.",
     },
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-dark-bg border-t border-gold-border/10 relative overflow-hidden">
+    <section className="py-24 md:py-32 bg-dark-bg border-t border-gold-border/10 relative overflow-hidden">
       <div className="bg-blob top-1/4 right-1/4" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
           
           {/* Left Side (5/12): Growth Header */}
           <div className="lg:col-span-5 flex flex-col space-y-6 items-start">
@@ -51,18 +51,18 @@ export function WhyInvestSohna() {
               Sohna has transitioned from a weekend retreat to Gurugram's most premium luxury low-rise zone. As corporate hubs saturate, demand has shifted toward larger residential floor plans, scenic topography, and clean air environments.
             </p>
 
-            <div className="flex flex-col space-y-3 font-sans text-xs pt-2">
+            <div className="flex flex-col space-y-3.5 font-sans text-xs pt-2">
               <div className="flex items-center space-x-3 text-warm-white">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-                <span>15 Mins to Gurgaon Golf Course Extension</span>
+                <span className="font-light">15 Mins to Gurgaon Golf Course Extension</span>
               </div>
               <div className="flex items-center space-x-3 text-warm-white">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-                <span>Direct Access to Delhi-Mumbai Expressway corridor</span>
+                <span className="font-light">Direct Access to Delhi-Mumbai Expressway corridor</span>
               </div>
               <div className="flex items-center space-x-3 text-warm-white">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-                <span>RERA Governed Protected Greenbelts</span>
+                <span className="font-light">RERA Governed Protected Greenbelts</span>
               </div>
             </div>
           </div>
@@ -72,10 +72,10 @@ export function WhyInvestSohna() {
             {points.map((point, index) => {
               const Icon = point.icon;
               return (
-                <FadeIn key={index} delay={index * 0.1} direction="up">
-                  <Card className="flex flex-col space-y-3.5 h-full">
+                <FadeIn key={index} delay={index * 0.15} direction="up">
+                  <Card className="flex flex-col space-y-3.5 h-full" variant="glass">
                     <Icon className="w-6 h-6 text-gold" />
-                    <h3 className="font-serif text-base font-bold text-warm-white">
+                    <h3 className="font-serif text-lg font-bold text-warm-white">
                       {point.title}
                     </h3>
                     <p className="text-xs text-warm-muted leading-relaxed font-sans font-light">
