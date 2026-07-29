@@ -8,17 +8,22 @@ export const socialLinks: SocialLink[] = [
   },
   {
     platform: "Instagram",
-    url: "https://www.instagram.com/terrainfracon",
+    url: "https://www.instagram.com/terra_infracon_/",
     iconName: "Instagram",
   },
   {
     platform: "Facebook",
-    url: "https://www.facebook.com/terrainfracon",
+    url: "https://www.facebook.com/profile.php?id=61555440785861",
     iconName: "Facebook",
   },
   {
     platform: "YouTube",
-    url: "https://www.youtube.com/@terrainfracon",
+    url: "https://www.youtube.com/@TerraInfraconGroup",
     iconName: "Youtube",
+  },
+  {
+    platform: "X (Twitter)",
+    url: "https://x.com/terrainfracon",
+    iconName: "Twitter",
   },
 ];
