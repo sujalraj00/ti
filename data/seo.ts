@@ -26,6 +26,11 @@ export const seoConfig: SEORegistry = {
     description: "Read verified reviews and experience stories from happy homeowners at Terra Elegance floors. Find out why families trust our construction quality.",
     keywords: ["Terra Infracon reviews", "Terra Elegance testimonials", "Real estate reviews Sohna", "Gurgaon builder feedback"],
   },
+  blog: {
+    title: "Real Estate & Living Insights | Terra Infracon Blog",
+    description: "Read expert articles on independent floors, infrastructure developments in Sohna & South Gurugram, healthy living spaces, and homebuyer guides.",
+    keywords: ["Sohna real estate blog", "Independent floors guide", "South Gurugram property growth", "Low rise communities Gurgaon", "Terra Infracon articles"],
+  },
   contact: {
     title: "Contact Us | Schedule Site Visit - Terra Infracon Gurugram",
     description: "Get in touch with the sales team of Terra Infracon. Visit our corporate office at Sector-49 Sohna Road, or request details for Terra Elegance.",
@@ -107,3 +112,32 @@ export const generateProjectSchema = (project: any, company: any) => {
     },
   };
 };
+
+// Generates JSON-LD BlogPosting schema for articles
+export const generateBlogArticleSchema = (post: any, company: any) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title + " - " + post.subtitle,
+    "description": post.excerpt,
+    "image": `https://terrainfracon.com${post.coverImage}`,
+    "datePublished": "2026-08-12T00:00:00+05:30",
+    "author": {
+      "@type": "Organization",
+      "name": post.author.name,
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": company.name,
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://terrainfracon.com/assets/logo.png",
+      },
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://terrainfracon.com/blog/${post.slug}`,
+    },
+  };
+};
+

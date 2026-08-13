@@ -13,7 +13,7 @@ export const headerNavLinks: NavigationLink[] = [
     ],
   },
   { label: "Gallery", href: "/gallery" },
-  { label: "Testimonials", href: "/testimonials" },
+  { label: "Blogs", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -23,6 +23,7 @@ export const footerLinks = {
     { label: "Mission & Vision", href: "/about#vision-mission" },
     { label: "Corporate Timeline", href: "/about#timeline" },
     { label: "Why Choose Terra", href: "/#why-choose-us" },
+    { label: "Blogs & Insights", href: "/blog" },
   ],
   projects: [
     { label: "Terra Elegance (Sohna)", href: "/projects/terra-elegance" },

@@ -126,3 +126,38 @@ export interface PageSEOMetadata {
 export interface SEORegistry {
   [route: string]: PageSEOMetadata;
 }
+
+export interface BlogSectionContent {
+  heading: string;
+  subheading?: string;
+  paragraphs: string[];
+  bulletPoints?: string[];
+}
+
+export interface BlogFAQ {
+  question: string;
+  answer: string;
+}
+
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  category: string;
+  publishDate: string;
+  readTime: string;
+  author: {
+    name: string;
+    role: string;
+    avatar?: string;
+  };
+  coverImage: string;
+  excerpt: string;
+  introParagraphs: string[];
+  sections: BlogSectionContent[];
+  keyTakeaways?: string[];
+  faqs?: BlogFAQ[];
+  relatedSlugs?: string[];
+}
+

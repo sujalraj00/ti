@@ -16,6 +16,7 @@ import WhyChooseUs from "../sections/WhyChooseUs";
 import WhyInvestSohna from "../sections/WhyInvestSohna";
 import TimelineSection from "../sections/TimelineSection";
 import FaqAccordion from "../sections/FaqAccordion";
+import BlogSection from "../sections/BlogSection";
 import { Button } from "../components/ui/Button";
 import { Card } from "../components/ui/Card";
 import { FadeIn } from "../animations/FadeIn";
@@ -118,57 +119,64 @@ export default function Home() {
       {/* 8. Process Timeline */}
       <TimelineSection />
 
-      {/* 9. Testimonials Slider Preview */}
-      <section className="py-20 md:py-28 bg-dark-bg border-t border-gold-border/10 relative overflow-hidden">
-        <div className="bg-blob bottom-10 right-10" />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-          
-          <div className="flex flex-col items-center text-center space-y-3 mb-16">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">
-              Homeowner Reviews
-            </span>
-            <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-warm-white">
-              Families Who Found Their Forever Home
-            </h2>
-            <div className="h-[1px] w-12 bg-gold mt-2" />
+      {/* 9. Blog Section (New) */}
+      <BlogSection />
+
+      {/* 
+        ========================================================================
+        TESTIMONIALS SECTION (Commented out for next version - DO NOT DELETE CODE)
+        ========================================================================
+        9. Testimonials Slider Preview
+        <section className="py-20 md:py-28 bg-dark-bg border-t border-gold-border/10 relative overflow-hidden">
+          <div className="bg-blob bottom-10 right-10" />
+          <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            
+            <div className="flex flex-col items-center text-center space-y-3 mb-16">
+              <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">
+                Homeowner Reviews
+              </span>
+              <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-warm-white">
+                Families Who Found Their Forever Home
+              </h2>
+              <div className="h-[1px] w-12 bg-gold mt-2" />
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+              {activeTestimonials.map((t, idx) => (
+                <FadeIn key={t.id} delay={idx * 0.15} direction="up" className="h-full">
+                  <Card className="flex flex-col justify-between space-y-6 h-full border border-gold-border/30 relative">
+                    <div className="flex space-x-1">
+                      {Array.from({ length: t.rating }).map((_, i) => (
+                        <Star key={i} className="w-3.5 h-3.5 fill-gold text-gold" />
+                      ))}
+                    </div>
+
+                    <blockquote className="font-serif text-sm md:text-base italic text-warm-white/95 leading-relaxed flex-grow">
+                      "{t.quote}"
+                    </blockquote>
+
+                    <div className="border-t border-gold-border/10 pt-4 flex flex-col font-sans">
+                      <cite className="not-italic text-xs font-bold text-gold uppercase tracking-wider">
+                        {t.author}
+                      </cite>
+                      <span className="text-[10px] text-warm-muted mt-0.5">
+                        {t.role} — {t.projectAssociated}
+                      </span>
+                    </div>
+                  </Card>
+                </FadeIn>
+              ))}
+            </div>
+
+            <div className="flex justify-center mt-12">
+              <Link href="/testimonials">
+                <Button variant="gold-outline">View All Reviews</Button>
+              </Link>
+            </div>
+
           </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
-            {activeTestimonials.map((t, idx) => (
-              <FadeIn key={t.id} delay={idx * 0.15} direction="up" className="h-full">
-                <Card className="flex flex-col justify-between space-y-6 h-full border border-gold-border/30 relative">
-                  {/* 5-Star Ratings */}
-                  <div className="flex space-x-1">
-                    {Array.from({ length: t.rating }).map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-gold text-gold" />
-                    ))}
-                  </div>
-
-                  <blockquote className="font-serif text-sm md:text-base italic text-warm-white/95 leading-relaxed flex-grow">
-                    "{t.quote}"
-                  </blockquote>
-
-                  <div className="border-t border-gold-border/10 pt-4 flex flex-col font-sans">
-                    <cite className="not-italic text-xs font-bold text-gold uppercase tracking-wider">
-                      {t.author}
-                    </cite>
-                    <span className="text-[10px] text-warm-muted mt-0.5">
-                      {t.role} — {t.projectAssociated}
-                    </span>
-                  </div>
-                </Card>
-              </FadeIn>
-            ))}
-          </div>
-
-          <div className="flex justify-center mt-12">
-            <Link href="/testimonials">
-              <Button variant="gold-outline">View All Reviews</Button>
-            </Link>
-          </div>
-
-        </div>
-      </section>
+        </section>
+      */}
 
       {/* 10. Faq Accordion */}
       <FaqAccordion />
