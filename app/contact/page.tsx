@@ -201,13 +201,11 @@ function ContactFormContent() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <Input
                     label="Full Name *"
-                    placeholder="Enter name"
                     error={errors.name?.message}
                     {...register("name")}
                   />
                   <Input
                     label="Phone Number *"
-                    placeholder="e.g. +91 9999988888"
                     error={errors.phone?.message}
                     {...register("phone")}
                   />
@@ -216,7 +214,6 @@ function ContactFormContent() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <Input
                     label="Email Address *"
-                    placeholder="e.g. buyer@gmail.com"
                     error={errors.email?.message}
                     {...register("email")}
                   />
@@ -245,7 +242,6 @@ function ContactFormContent() {
 
                 <Textarea
                   label="Enquiry Details / Message"
-                  placeholder="Specify preferences like configurations, budget, or request site visits..."
                   error={errors.message?.message}
                   {...register("message")}
                 />

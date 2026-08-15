@@ -70,7 +70,7 @@ export default function BlogListingPage() {
                     alt={featuredPost.title}
                     fill
                     sizes="(max-width: 1024px) 100vw, 60vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className="object-contain group-hover:scale-105 transition-transform duration-700 ease-out"
                     priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/80 via-transparent to-transparent lg:hidden" />
@@ -146,7 +146,6 @@ export default function BlogListingPage() {
             <Search className="w-4 h-4 text-gold absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
-              placeholder="Search articles..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full bg-dark-surface/80 border border-gold-border/30 pl-10 pr-4 py-2.5 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors"
@@ -185,7 +184,7 @@ export default function BlogListingPage() {
                         alt={post.title}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                        className="object-contain group-hover:scale-105 transition-transform duration-700 ease-out"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
                       

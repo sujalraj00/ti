@@ -79,7 +79,6 @@ export default function ProjectsDirectory() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search by project name or sector..."
               className="w-full bg-dark-surface border border-gold-border/30 pl-10 pr-4 py-2.5 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 rounded-none focus:outline-none focus:border-gold transition-colors"
             />
           </div>

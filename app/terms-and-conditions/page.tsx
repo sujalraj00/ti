@@ -31,7 +31,7 @@ export default function TermsAndConditions() {
           All artistic renderings, 3D floor layout models, computer-generated interior designs, drone views, site map projections, and brochure document files displayed on this website are for representational/demonstration purposes only. They are not to be considered as final contractual offers.
         </p>
         <p>
-          Properties marked with double brackets (e.g. <span className="text-gold">"[[...]]"</span>) denote premium placeholders representing future, non-final inputs. Actual floor plans, finishes, configurations, and pricing spreadsheets are subject to change as approved by HARERA Gurgaon or final client development guidelines.
+          Actual floor plans, finishes, configurations, and pricing spreadsheets are subject to change as approved by HARERA Gurgaon or final client development guidelines.
         </p>
 
         <h3 className="font-serif text-base md:text-lg font-bold text-warm-white pt-4">2. Pricing & Cost Sheet Updates</h3>

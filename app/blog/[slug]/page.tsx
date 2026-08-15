@@ -118,7 +118,7 @@ export default function BlogArticlePage({ params }: { params: Promise<{ slug: st
             alt={post.title}
             fill
             sizes="(max-width: 1024px) 100vw, 900px"
-            className="object-cover"
+            className="object-contain"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/60 via-transparent to-transparent" />

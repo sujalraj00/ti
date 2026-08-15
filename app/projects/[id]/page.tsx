@@ -23,6 +23,9 @@ export default function ProjectDetailsPage({ params }: { params: Promise<{ id: s
   const [activeTab, setActiveTab] = useState<"overview" | "specs" | "location">("overview");
   const [selectedFloorPlan, setSelectedFloorPlan] = useState(0);
   const [isFloorPlanLightboxOpen, setIsFloorPlanLightboxOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState<string | null>(null);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   if (!project) {
     notFound();
@@ -34,9 +37,44 @@ export default function ProjectDetailsPage({ params }: { params: Promise<{ id: s
   const relatedProjects = projects.filter((p) => p.id !== project.id);
 
   // Form submission handler
-  const handleBrochureRequest = (e: React.FormEvent) => {
+  const handleBrochureRequest = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert(`Thank you! The digital brochure for ${project.name} is preparing. A copy has been simulated to your contact.`);
+    setIsSubmitting(true);
+    setSubmitMessage(null);
+    setSubmitError(null);
+
+    const formData = new FormData(e.currentTarget);
+    const payload = {
+      name: formData.get("name") as string,
+      phone: formData.get("phone") as string,
+      email: formData.get("email") as string,
+      project: project.name,
+      message: "Brochure & Price Sheet Request",
+      consent: true,
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setSubmitMessage("Thank you! Your enquiry has been submitted. The download links have been activated.");
+        alert(`Brochure and Price Sheet request successful! PDF downloads simulated.`);
+      } else {
+        setSubmitError(result.message || "Failed to submit request. Please try again.");
+      }
+    } catch (err) {
+      setSubmitError("A connection error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -344,14 +382,14 @@ export default function ProjectDetailsPage({ params }: { params: Promise<{ id: s
                   <div className="border border-dashed border-gold-border/30 bg-dark-surface/30 p-8 flex flex-col items-center justify-center text-center space-y-4">
                     <Layers className="w-10 h-10 text-gold/60" />
                     <div className="space-y-1">
-                      <h4 className="font-serif text-base font-bold text-warm-white">[[ Floor Plan Layout Placeholder ]]</h4>
+                      <h4 className="font-serif text-base font-bold text-warm-white">Floor Plan Layout</h4>
                       <p className="text-[10px] font-sans text-warm-muted uppercase tracking-widest">3 BHK & 4 BHK Layout Drafts</p>
                     </div>
                     <p className="text-xs text-warm-muted leading-relaxed font-sans font-light max-w-[240px]">
                       Detailed blueprint drawings, dimensions, and layout maps will be updated immediately upon client clearance.
                     </p>
                     <Button variant="gold-outline" size="sm" className="opacity-80 cursor-not-allowed">
-                      [[ Preview Plan ]]
+                      Preview Plan
                     </Button>
                   </div>
 
@@ -359,27 +397,27 @@ export default function ProjectDetailsPage({ params }: { params: Promise<{ id: s
                   <div className="border border-dashed border-gold-border/30 bg-dark-surface/30 p-8 flex flex-col items-center justify-center text-center space-y-4">
                     <Compass className="w-10 h-10 text-gold/60" />
                     <div className="space-y-1">
-                      <h4 className="font-serif text-base font-bold text-warm-white">[[ Master Plan Layout Placeholder ]]</h4>
+                      <h4 className="font-serif text-base font-bold text-warm-white">Master Plan Layout</h4>
                       <p className="text-[10px] font-sans text-warm-muted uppercase tracking-widest">Plot Enclave Topology</p>
                     </div>
                     <p className="text-xs text-warm-muted leading-relaxed font-sans font-light max-w-[240px]">
-                      Landscape pathway grids, botanical gardens, and peripheral road placements placeholder.
+                      Landscape pathway grids, botanical gardens, and peripheral road placements.
                     </p>
                     <Button variant="gold-outline" size="sm" className="opacity-80 cursor-not-allowed">
-                      [[ Preview Layout ]]
+                      Preview Layout
                     </Button>
                   </div>
                 </div>
               )}
             </div>
 
-            {/* 4. Construction Updates Placeholders */}
+            {/* 4. Construction Updates */}
             <div className="border-t border-gold-border/25 pt-10 space-y-6">
               <h3 className="font-serif text-2xl font-bold text-warm-white">Construction Status Logs</h3>
               <div className="border border-gold-border/20 bg-dark-surface/20 p-6 space-y-4">
                 <div className="flex items-center space-x-2 text-xs font-sans text-gold font-bold uppercase tracking-widest">
                   <Calendar className="w-4 h-4" />
-                  <span>[[ Dynamic Construction Timeline Placeholder ]]</span>
+                  <span>Dynamic Construction Timeline</span>
                 </div>
                 <div className="space-y-3 font-sans text-xs text-warm-muted font-light pl-6 border-l border-gold-border/20">
                   <div>
@@ -408,46 +446,65 @@ export default function ProjectDetailsPage({ params }: { params: Promise<{ id: s
               <div className="border-y border-gold-border/10 py-4.5 space-y-3.5 font-sans text-xs text-warm-muted">
                 <div className="flex justify-between">
                   <span>Brochure Size:</span>
-                  <strong className="text-warm-white">[[ Brochure.PDF - 4.2 MB ]]</strong>
+                  <strong className="text-warm-white">Brochure.PDF - 4.2 MB</strong>
                 </div>
                 <div className="flex justify-between">
                   <span>Price List:</span>
-                  <strong className="text-warm-white">[[ PriceSheet.PDF - 850 KB ]]</strong>
+                  <strong className="text-warm-white">PriceSheet.PDF - 850 KB</strong>
                 </div>
               </div>
 
               {/* Form Submission */}
               <form onSubmit={handleBrochureRequest} className="space-y-4">
                 <p className="text-xs text-warm-muted font-sans leading-relaxed">
-                  Enter your details below to unlock download placeholders and request pricing lists.
+                  Enter your details below to unlock downloads and request pricing lists.
                 </p>
                 <div className="space-y-3">
                   <input
                     type="text"
+                    name="name"
                     required
+                    disabled={isSubmitting}
                     placeholder="Your Name"
-                    className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-2.5 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors"
+                    className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-2.5 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors disabled:opacity-50"
                   />
                   <input
                     type="tel"
+                    name="phone"
                     required
+                    disabled={isSubmitting}
                     placeholder="Phone Number"
-                    className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-2.5 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors"
+                    className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-2.5 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors disabled:opacity-50"
                   />
                   <input
                     type="email"
+                    name="email"
                     required
+                    disabled={isSubmitting}
                     placeholder="Email Address"
-                    className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-2.5 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors"
+                    className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-2.5 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors disabled:opacity-50"
                   />
                 </div>
 
+                {submitMessage && (
+                  <p className="text-[11px] text-gold font-sans font-medium bg-gold/10 border border-gold/20 p-2.5">
+                    {submitMessage}
+                  </p>
+                )}
+
+                {submitError && (
+                  <p className="text-[11px] text-red-500 font-sans font-medium bg-red-950/20 border border-red-900/30 p-2.5">
+                    {submitError}
+                  </p>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full bg-gold text-dark-bg hover:bg-gold-light py-3 font-sans text-xs uppercase tracking-widest font-bold transition-all duration-300 flex items-center justify-center space-x-2"
+                  disabled={isSubmitting}
+                  className="w-full bg-gold text-dark-bg hover:bg-gold-light py-3 font-sans text-xs uppercase tracking-widest font-bold transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50"
                 >
                   <Download className="w-4 h-4" />
-                  <span>[[ Download Brochure ]]</span>
+                  <span>{isSubmitting ? "Submitting..." : "Download Brochure"}</span>
                 </button>
               </form>
 

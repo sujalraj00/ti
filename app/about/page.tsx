@@ -81,6 +81,7 @@ export default function AboutPage() {
                   src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80"
                   alt="Premium Villa Interior"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-dark-bg/20" />
@@ -183,12 +184,9 @@ export default function AboutPage() {
             <FadeIn direction="right">
               <div className="border border-gold-border/30 bg-dark-bg p-6 flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-6">
                 <div className="w-32 h-32 bg-dark-surface border border-gold-border/20 relative flex items-center justify-center text-center shrink-0">
-                  <span className="text-[10px] uppercase tracking-widest text-warm-muted p-2 font-sans">
-                    [[ Director Photo Placeholder ]]
-                  </span>
                 </div>
                 <div className="flex flex-col items-center sm:items-start text-center sm:text-left space-y-1">
-                  <h3 className="font-serif text-lg font-bold text-warm-white">[[ Chairman & Managing Director ]]</h3>
+                  <h3 className="font-serif text-lg font-bold text-warm-white">Chairman & Managing Director</h3>
                   <p className="text-[10px] uppercase tracking-widest text-gold font-bold">Co-Founder, Terra Infracon</p>
                   <p className="text-xs text-warm-muted leading-relaxed font-sans font-light pt-2">
                     Envisioning corporate policies, strategic growth acquisitions, and financial planning across commercial structures.
@@ -201,12 +199,9 @@ export default function AboutPage() {
             <FadeIn direction="left">
               <div className="border border-gold-border/30 bg-dark-bg p-6 flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-6">
                 <div className="w-32 h-32 bg-dark-surface border border-gold-border/20 relative flex items-center justify-center text-center shrink-0">
-                  <span className="text-[10px] uppercase tracking-widest text-warm-muted p-2 font-sans">
-                    [[ Director Photo Placeholder ]]
-                  </span>
                 </div>
                 <div className="flex flex-col items-center sm:items-start text-center sm:text-left space-y-1">
-                  <h3 className="font-serif text-lg font-bold text-warm-white">[[ Executive Director - Operations ]]</h3>
+                  <h3 className="font-serif text-lg font-bold text-warm-white">Executive Director - Operations</h3>
                   <p className="text-[10px] uppercase tracking-widest text-gold font-bold">Head of Engineering & Site QA</p>
                   <p className="text-xs text-warm-muted leading-relaxed font-sans font-light pt-2">
                     Supervising structure construction quality, site managers, procurement of certified materials, and delivery timelines.

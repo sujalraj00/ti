@@ -115,7 +115,7 @@ export const projects: Project[] = [
         details: [
           "Concealed copper wiring with modular switches (Legrand/Schneider).",
           "Split AC piping in Living room and all bedrooms.",
-          "100% power backup placeholder setup with dual-metering.",
+          "100% power backup setup with dual-metering.",
           "Smart Video Door Phone connected to the gate security."
         ]
       }
@@ -146,7 +146,7 @@ export const projects: Project[] = [
     },
     brochureUrl: "[[Brochure PDF Download Link]]",
     videoUrl: "/terra-elegance/cover-video.mp4",
-    droneFootageUrl: "[[Drone Aerial View Footage Placeholder]]",
+    droneFootageUrl: "",
     virtualTourUrl: "[[3D Virtual Tour Walkthrough VR Link]]"
   },
   {

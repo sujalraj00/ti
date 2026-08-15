@@ -159,7 +159,7 @@ export function Footer() {
                 type="email"
                 required
                 autoComplete="email"
-                placeholder="Enter corporate email"
+                name="email"
                 className="w-full bg-dark-bg border border-gold-border px-3.5 py-3 text-xs font-sans text-warm-white placeholder:text-warm-muted/30 focus:outline-none focus:border-gold transition-colors"
               />
               <button
@@ -175,7 +175,7 @@ export function Footer() {
         {/* RERA Disclaimer */}
         <div className="border-t border-gold-border/20 pt-8 pb-4">
           <p className="text-[10px] text-warm-muted/70 leading-relaxed font-sans text-justify font-light">
-            <strong className="text-gold font-semibold">RERA DISCLAIMER:</strong> The project details, plans, images, specifications, and values shown on this website (such as unit layouts, floor configurations, starting prices, brochure downloads, gallery images, and drone views) marked with double brackets e.g. <span className="text-gold-light">"[[...]]"</span> are premium placeholder representations. They are intended for demonstration purposes only. Complete project details, prices, and floor plans will be updated immediately upon receiving approved final files from the client. RERA registration number: <span className="text-warm-white font-medium">{companyDetails.rera}</span>.
+            <strong className="text-gold font-semibold">RERA DISCLAIMER:</strong> The project details, plans, images, specifications, and values shown on this website are intended for demonstration purposes only. Complete project details, prices, and floor plans will be updated immediately upon receiving approved final files from the client. RERA registration number: <span className="text-warm-white font-medium">{companyDetails.rera}</span>.
           </p>
         </div>
 

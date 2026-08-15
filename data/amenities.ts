@@ -47,7 +47,7 @@ export const projectAmenities: Amenity[] = [
     id: "a7",
     name: "100% Power Backup",
     iconName: "Zap",
-    description: "Continuous power backup placeholder grid ensuring elevator and basic floor loads run without interruption.",
+    description: "Continuous power backup grid ensuring elevator and basic floor loads run without interruption.",
     isPremium: false,
   },
   {
