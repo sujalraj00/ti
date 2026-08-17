@@ -34,7 +34,7 @@ export default function ProjectsDirectory() {
 
       {/* Page Header */}
       <section className="relative py-20 md:py-24 border-b border-gold-border/10">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center opacity-[0.03] mix-blend-luminosity"
           style={{ backgroundImage: `url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1920&q=80')` }}
         />
@@ -54,18 +54,17 @@ export default function ProjectsDirectory() {
       {/* Directory Tools Section */}
       <section className="py-8 max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 border-b border-gold-border/15 pb-6">
-          
+
           {/* Status Filters */}
           <div className="flex flex-wrap gap-2 justify-center w-full md:w-auto">
             {filters.map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-4 py-2 text-[10px] font-sans uppercase tracking-widest border transition-all duration-300 ${
-                  activeFilter === filter
+                className={`px-4 py-2 text-[10px] font-sans uppercase tracking-widest border transition-all duration-300 ${activeFilter === filter
                     ? "bg-gold text-dark-bg border-gold font-bold"
                     : "bg-transparent text-warm-white border-gold-border/20 hover:border-gold/50"
-                }`}
+                  }`}
               >
                 {filter}
               </button>
@@ -99,7 +98,7 @@ export default function ProjectsDirectory() {
             {filteredProjects.map((project, idx) => (
               <FadeIn key={project.id} delay={idx * 0.05} direction="up" className="h-full">
                 <Card className="flex flex-col h-full p-0 group overflow-hidden border border-gold-border/20 relative">
-                  
+
                   {/* Left border overlay on hover */}
                   <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gold scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-bottom z-10" />
 
@@ -112,7 +111,7 @@ export default function ProjectsDirectory() {
                       sizes="(max-width: 768px) 100vw, 400px"
                       className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
                     />
-                    
+
                     {/* Status badge */}
                     <div className="absolute top-4 right-4 bg-dark-bg/90 border border-gold-border text-[9px] uppercase tracking-widest font-bold px-3 py-1 text-gold">
                       {project.status}
@@ -131,11 +130,11 @@ export default function ProjectsDirectory() {
                         <Layers className="w-3.5 h-3.5" />
                         <span>{project.type}</span>
                       </div>
-                      
+
                       <h3 className="font-serif text-2xl font-bold text-warm-white group-hover:text-gold transition-colors">
                         {project.name}
                       </h3>
-                      
+
                       <div className="flex items-center space-x-1.5 text-xs text-warm-muted font-sans">
                         <MapPin className="w-3.5 h-3.5 text-gold/80" />
                         <span>{project.location}</span>
@@ -151,7 +150,7 @@ export default function ProjectsDirectory() {
                       <span className="text-[10px] uppercase tracking-widest text-warm-muted">
                         RERA Registered
                       </span>
-                      <Link 
+                      <Link
                         href={`/projects/${project.id}`}
                         className="inline-flex items-center space-x-1.5 text-gold font-bold hover:text-gold-light group/link"
                       >

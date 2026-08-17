@@ -150,18 +150,18 @@ export const projects: Project[] = [
     virtualTourUrl: "[[3D Virtual Tour Walkthrough VR Link]]"
   },
   {
-    id: "terra-heights",
-    name: "Terra Heights",
+    id: "terra-elegance-phase-ii",
+    name: "Terra Elegance Phase II",
     type: "Premium High-Rise Residences",
     status: "Launch Soon",
     location: "Sector-2, Sohna, Gurugram",
     rera: "[[Pending HARERA Approval]]",
     shortDescription: "Premium high-rise apartment towers with panoramic Aravalli views and state-of-the-art clubhouse amenities.",
-    description: "Terra Heights will redefine the skyline of Sohna. Offering 3 & 4 BHK high-rise condominiums with custom-engineered luxury, this project features wrap-around balconies, private foyers, and a double-height luxury clubhouse complete with infinity pools and Aravalli-facing sky lounges.",
+    description: "Terra Heights will redefine the skyline of Sohna. Offering 2, 3 & 4 BHK high-rise condominiums with custom-engineered luxury, this project features wrap-around balconies, private foyers, and a double-height luxury clubhouse complete with infinity pools and Aravalli-facing sky lounges.",
     startingPrice: "[[Starting Price - Coming Soon]]",
-    configurations: "[[Configurations - 3 BHK & 4 BHK High-Rise Apartments]]",
+    configurations: "[[Configurations - 2, 3 & 4 BHK High-Rise Apartments]]",
     unitSizes: "[[Unit Sizes - 2200 - 3100 Sq.Ft.]]",
-    possessionDate: "[[Possession Date - Phase 1 Dec 2029]]",
+    possessionDate: "[[Launching Soon]]",
     features: [
       "Double-Height Entrance Lobby",
       "Rooftop Infinity Pool",
@@ -183,38 +183,38 @@ export const projects: Project[] = [
     droneFootageUrl: "[[Drone Aerial View Footage Placeholder]]",
     virtualTourUrl: "[[3D Virtual Tour Walkthrough VR Link]]"
   },
-  {
-    id: "terra-oasis",
-    name: "Terra Oasis",
-    type: "Boutique Residential Plots",
-    status: "Upcoming",
-    location: "Sector-14, Sohna, Gurugram",
-    rera: "[[Pending HARERA Registration]]",
-    shortDescription: "Curated residential plots inside a premium gated township, featuring landscaped pathways and thematic botanical gardens.",
-    description: "Terra Oasis offers discerning investors the opportunity to build their custom dream estate. Comprising a limited enclave of premium residential plots, this gated community incorporates wide asphalt roads, underground utilities, rainwater harvesting grids, and multiple botanical thematic parks.",
-    startingPrice: "[[Starting Price - Launching Shortly]]",
-    configurations: "[[Configurations - Exclusive Residential Plots]]",
-    unitSizes: "[[Unit Sizes - 150 - 500 Sq.Yds]]",
-    possessionDate: "[[Possession Date - Infrastructure Complete mid-2028]]",
-    features: [
-      "Secured Gated Community",
-      "Underground Cable System",
-      "Botanical & Reflexology Parks",
-      "Smart Water Management Grid"
-    ],
-    highlights: [],
-    locationAdvantages: [],
-    specifications: [],
-    images: {
-      hero: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&q=80",
-      gallery: [],
-      floorPlans: [],
-      masterPlan: "[[Master Plan Image Placeholder]]",
-      constructionUpdates: []
-    },
-    brochureUrl: "[[Brochure PDF Download Link]]",
-    videoUrl: "[[Project Overview Video Placeholder]]",
-    droneFootageUrl: "[[Drone Aerial View Footage Placeholder]]",
-    virtualTourUrl: "[[3D Virtual Tour Walkthrough VR Link]]"
-  }
+  // {
+  //   id: "terra-oasis",
+  //   name: "Terra Oasis",
+  //   type: "Boutique Residential Plots",
+  //   status: "Upcoming",
+  //   location: "Sector-14, Sohna, Gurugram",
+  //   rera: "[[Pending HARERA Registration]]",
+  //   shortDescription: "Curated residential plots inside a premium gated township, featuring landscaped pathways and thematic botanical gardens.",
+  //   description: "Terra Oasis offers discerning investors the opportunity to build their custom dream estate. Comprising a limited enclave of premium residential plots, this gated community incorporates wide asphalt roads, underground utilities, rainwater harvesting grids, and multiple botanical thematic parks.",
+  //   startingPrice: "[[Starting Price - Launching Shortly]]",
+  //   configurations: "[[Configurations - Exclusive Residential Plots]]",
+  //   unitSizes: "[[Unit Sizes - 150 - 500 Sq.Yds]]",
+  //   possessionDate: "[[Possession Date - Infrastructure Complete mid-2028]]",
+  //   features: [
+  //     "Secured Gated Community",
+  //     "Underground Cable System",
+  //     "Botanical & Reflexology Parks",
+  //     "Smart Water Management Grid"
+  //   ],
+  //   highlights: [],
+  //   locationAdvantages: [],
+  //   specifications: [],
+  //   images: {
+  //     hero: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&q=80",
+  //     gallery: [],
+  //     floorPlans: [],
+  //     masterPlan: "[[Master Plan Image Placeholder]]",
+  //     constructionUpdates: []
+  //   },
+  //   brochureUrl: "[[Brochure PDF Download Link]]",
+  //   videoUrl: "[[Project Overview Video Placeholder]]",
+  //   droneFootageUrl: "[[Drone Aerial View Footage Placeholder]]",
+  //   virtualTourUrl: "[[3D Virtual Tour Walkthrough VR Link]]"
+  // }
 ];

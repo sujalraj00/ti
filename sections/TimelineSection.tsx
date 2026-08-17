@@ -6,29 +6,29 @@ import { FadeIn } from "../animations/FadeIn";
 export function TimelineSection() {
   const milestones = [
     {
-      year: "2014",
-      title: "Corporate Inception",
-      description: "Terra Infracon Pvt. Ltd. was incorporated in Gurugram, India, with a vision to develop sustainable, high-integrity boutique residential spaces.",
+      year: "2014—The Beginning",
+      title: "Building Our Foundation in Gurugram",
+      description: "Terra Infracon began its journey in 2014, completing the necessary legal formalities and establishing its presence in the Gurugram real estate market.",
     },
     {
-      year: "2017",
-      title: "First Deliveries",
-      description: "Successfully handed over our first luxury independent villa floors in Gurugram, establishing our reputation for high-end construction quality.",
+      year: "2017—Growing with the Market",
+      title: "Expanding Our Real Estate Presence",
+      description: "We began operating at a growing scale, focusing on land and property opportunities across Sohna and Gurugram, while strengthening our understanding of the local real estate market.",
     },
     {
-      year: "2020",
-      title: "Expansion into Sohna Corridor",
-      description: "Acquired strategic land reserves near the foot of the Aravallis, anticipating the growth shift towards eco-luxury boutique lifestyles.",
+      year: "2020—Expansion into Sohna",
+      title: "A New Chapter of Growth",
+      description: "In 2020, Terra Infracon expanded its operations and obtained the required licenses to establish a stronger presence in Sohna. During this phase, the company acquired and developed Precore City, marking an important milestone in our growth journey.",
     },
     {
-      year: "2024",
-      title: "HARERA License Approval",
-      description: "Secured Haryana RERA approvals (RC/REP/HARERA/GGM/854/2024/81) and launched our flagship independent floors project, Terra Elegance.",
+      year: "2024—Terra Elegance",
+      title: "Launching Our First Licensed Project",
+      description: "In 2024, Terra Infracon achieved another significant milestone with the licensing of Terra Elegance, our first project within Precore City. The project was planned as a 3BHK independent-floor development with stilt parking, designed to offer comfortable and modern living.",
     },
     {
-      year: "2027",
-      title: "Expected Deliveries",
-      description: "Ongoing structural concrete work for Terra Elegance on schedule for handover in [[December 2027]], along with new pipeline high-rises.",
+      year: "2026—Commitment to Delivery",
+      title: "Turning Promises into Possession",
+      description: "In 2026, our focus is on delivering Terra Elegance to our valued customers with a strong commitment to quality, timely execution, and customer satisfaction. We continue to build not just homes, but lasting trust with every project we undertake.",
     },
   ];
 
@@ -37,7 +37,7 @@ export function TimelineSection() {
       <div className="bg-blob bottom-1/4 right-1/4" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        
+
         {/* Title Block */}
         <div className="flex flex-col items-center text-center space-y-3 mb-20 md:mb-24">
           <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">
@@ -59,11 +59,10 @@ export function TimelineSection() {
               const isEven = index % 2 === 0;
 
               return (
-                <div 
-                  key={index} 
-                  className={`flex flex-col md:flex-row relative items-start md:items-center ${
-                    isEven ? "md:flex-row-reverse" : ""
-                  }`}
+                <div
+                  key={index}
+                  className={`flex flex-col md:flex-row relative items-start md:items-center ${isEven ? "md:flex-row-reverse" : ""
+                    }`}
                 >
                   {/* Spine Node Pinpoint */}
                   <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-dark-bg border-2 border-gold rounded-full transform -translate-x-1/2 z-10 shadow-[0_0_10px_rgba(197,168,92,0.4)] flex items-center justify-center">

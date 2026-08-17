@@ -8,8 +8,8 @@ export const headerNavLinks: NavigationLink[] = [
     href: "/projects",
     children: [
       { label: "Terra Elegance (Ongoing Floors)", href: "/projects/terra-elegance" },
-      { label: "Terra Heights (Launch Soon)", href: "/projects/terra-heights" },
-      { label: "Terra Oasis (Upcoming Plots)", href: "/projects/terra-oasis" },
+      { label: "Terra Elegance (Phase II)", href: "/projects/terra-elegance-phase-ii" },
+      // { label: "Terra Oasis (Upcoming Plots)", href: "/projects/terra-oasis" },
     ],
   },
   { label: "Gallery", href: "/gallery" },
@@ -28,7 +28,7 @@ export const footerLinks = {
   projects: [
     { label: "Terra Elegance (Sohna)", href: "/projects/terra-elegance" },
     { label: "Terra Heights (Sohna)", href: "/projects/terra-heights" },
-    { label: "Terra Oasis (Sohna)", href: "/projects/terra-oasis" },
+    // { label: "Terra Oasis (Sohna)", href: "/projects/terra-oasis" },
     { label: "All Projects", href: "/projects" },
   ],
   support: [

@@ -34,7 +34,7 @@ export function WhyInvestSohna() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
-          
+
           {/* Left Side (5/12): Growth Header */}
           <div className="lg:col-span-5 flex flex-col space-y-6 items-start">
             <div className="flex flex-col space-y-2">
@@ -46,7 +46,7 @@ export function WhyInvestSohna() {
                 <span className="text-gold italic font-serif font-light">Sohna Corridor?</span>
               </h2>
             </div>
-            
+
             <p className="text-sm md:text-base text-warm-muted leading-relaxed font-sans font-light">
               Sohna has transitioned from a weekend retreat to Gurugram's most premium luxury low-rise zone. As corporate hubs saturate, demand has shifted toward larger residential floor plans, scenic topography, and clean air environments.
             </p>
@@ -54,11 +54,11 @@ export function WhyInvestSohna() {
             <div className="flex flex-col space-y-3.5 font-sans text-xs pt-2">
               <div className="flex items-center space-x-3 text-warm-white">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-                <span className="font-light">15 Mins to Gurgaon Golf Course Extension</span>
+                <span className="font-light">30 Mins to Gurgaon Golf Course Extension</span>
               </div>
               <div className="flex items-center space-x-3 text-warm-white">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-                <span className="font-light">Direct Access to Delhi-Mumbai Expressway corridor</span>
+                <span className="font-light">25 min to Rajiv Chowk</span>
               </div>
               <div className="flex items-center space-x-3 text-warm-white">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold" />
