@@ -1,7 +1,9 @@
+
 "use client";
 
 import { useRef, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, MessageSquare } from "lucide-react";
 import { companyDetails } from "../data/company";
@@ -15,6 +17,7 @@ export function Hero() {
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.muted = true;
+
       videoRef.current.play().catch((err) => {
         console.warn("Video autoplay failed:", err);
       });
@@ -33,21 +36,55 @@ export function Hero() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const },
+      transition: {
+        duration: 0.8,
+        ease: [0.16, 1, 0.3, 1] as const,
+      },
+    },
+  };
+
+  /*
+   * Logo animation
+   *
+   * The logo is no longer scaled.
+   * Its position is controlled by the shared hero container below.
+   */
+  const logoVariants = {
+    hidden: {
+      opacity: 0,
+      y: -10,
+      filter: "blur(8px)",
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: {
+        duration: 1.2,
+        ease: [0.16, 1, 0.3, 1] as const,
+      },
     },
   };
 
   return (
     <section className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-dark-bg select-none">
-      {/* Background Video with Opacity and Scale Animation */}
+      {/* =========================================================
+          BACKGROUND VIDEO
+      ========================================================= */}
       <motion.div
         initial={{ scale: 1.1, opacity: 0 }}
-        animate={{ scale: 1.0, opacity: 0.35 }}
-        transition={{ duration: 2.2, ease: "easeOut" }}
+        animate={{ scale: 1, opacity: 0.35 }}
+        transition={{
+          duration: 2.2,
+          ease: "easeOut",
+        }}
         className="absolute inset-0 z-0"
       >
         <video
@@ -59,36 +96,91 @@ export function Hero() {
           poster="/terra-elegance/homepage-banner.png"
           className="w-full h-full object-cover"
         >
-          <source src="/terra-elegance/cover-video.mp4" type="video/mp4" />
+          <source
+            src="/terra-elegance/cover-video.mp4"
+            type="video/mp4"
+          />
         </video>
       </motion.div>
 
-      {/* Cinematic Gradient Overlays */}
+      {/* =========================================================
+          CINEMATIC GRADIENT OVERLAYS
+      ========================================================= */}
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-dark-bg/60 via-dark-bg/40 to-dark-bg" />
+
       <div className="absolute inset-0 z-10 bg-gradient-to-r from-dark-bg via-dark-bg/20 to-transparent" />
 
-      {/* Hero Content Container */}
-      <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 w-full flex flex-col items-start pt-16">
+      {/* =========================================================
+          LOGO
+          
+          IMPORTANT:
+          This uses the EXACT SAME container and padding as
+          the hero content below, so the left edge of the logo
+          aligns perfectly with the left edge of the text.
+      ========================================================= */}
+      <div className="absolute top-5 left-0 right-0 z-30 pointer-events-none">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
+          <motion.div
+            variants={logoVariants}
+            initial="hidden"
+            animate="visible"
+            className="relative inline-block pointer-events-auto"
+          >
+            {/* Soft ambient glow */}
+            <div className="absolute -inset-4 bg-gold/5 rounded-2xl blur-2xl pointer-events-none" />
+
+            <Image
+              src="/TerraInfraconLogo.png"
+              alt="Terra Infracon"
+              width={270}
+              height={62}
+              className="relative w-[220px] md:w-[270px] h-auto object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.15)]"
+              priority
+            />
+          </motion.div>
+        </div>
+      </div>
+
+      {/* =========================================================
+          HERO CONTENT
+          
+          This container is intentionally identical to the
+          logo container above.
+      ========================================================= */}
+      <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 w-full flex flex-col items-start pt-24 md:pt-28">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
           className="max-w-3xl flex flex-col items-start space-y-6 md:space-y-8"
         >
-          {/* Eyebrow Label */}
-          <motion.div variants={itemVariants} className="flex items-center space-x-2">
+          {/* =====================================================
+              EYEBROW LABEL
+          ===================================================== */}
+          <motion.div
+            variants={itemVariants}
+            className="flex items-center space-x-2"
+          >
             <span className="h-[1px] w-8 bg-gold" />
+
             <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">
               GURUGRAM · SOHNA · INDIA
             </span>
           </motion.div>
 
-          {/* Main Animated Headline */}
+          {/* =====================================================
+              MAIN ANIMATED HEADLINE
+          ===================================================== */}
           <div className="flex flex-col space-y-1">
             <h1 className="font-serif text-5xl md:text-7xl xl:text-8xl font-bold tracking-tight text-warm-white leading-[1.05] text-balance">
-              <TextReveal text="Crafting Spaces" delay={0.2} />
+              <TextReveal
+                text="Crafting Spaces"
+                delay={0.2}
+              />
+
               <br />
-              <motion.span 
+
+              <motion.span
                 variants={itemVariants}
                 className="text-gold italic font-light font-serif block mt-2"
               >
@@ -97,64 +189,110 @@ export function Hero() {
             </h1>
           </div>
 
-          {/* Subtitle */}
+          {/* =====================================================
+              SUBTITLE
+          ===================================================== */}
           <motion.p
             variants={itemVariants}
             className="text-sm md:text-base text-warm-muted leading-relaxed font-sans max-w-xl font-light text-balance"
           >
-            Luxury independent residential developments at the scenic foot of the Aravallis — designed exclusively for those who refuse to compromise on quality and space.
+            Luxury independent residential developments at the
+            scenic foot of the Aravallis — designed exclusively
+            for those who refuse to compromise on quality and
+            space.
           </motion.p>
 
-          {/* CTA Button Row */}
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-4 items-center pt-2">
+          {/* =====================================================
+              CTA BUTTON ROW
+          ===================================================== */}
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-wrap gap-4 items-center pt-2"
+          >
             <Magnetic>
               <Link href="/projects/terra-elegance">
-                <Button variant="primary" size="lg" className="flex items-center space-x-2">
+                <Button
+                  variant="primary"
+                  size="lg"
+                  className="flex items-center space-x-2"
+                >
                   <span>Explore Projects</span>
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
             </Magnetic>
+
             <Magnetic strength={0.2}>
               <Link href="/about">
-                <Button variant="gold-outline" size="lg">
+                <Button
+                  variant="gold-outline"
+                  size="lg"
+                >
                   Our Story
                 </Button>
               </Link>
             </Magnetic>
           </motion.div>
 
-          {/* Luxury Floating CTAs */}
+          {/* =====================================================
+              LUXURY FLOATING CTAs
+          ===================================================== */}
           <motion.div
             variants={itemVariants}
             className="flex flex-wrap gap-x-6 gap-y-3 text-[10px] uppercase tracking-widest text-warm-white font-bold border-t border-gold-border/20 pt-6 w-full max-w-lg"
           >
+            {/* Phone */}
             <a
               href={`tel:${companyDetails.phone}`}
               className="flex items-center space-x-2 hover:text-gold transition-colors duration-300"
             >
               <Phone className="w-3.5 h-3.5 text-gold" />
-              <span>Call +91 124 3633146</span>
+
+              <span>
+                Call +91 124 3633146
+              </span>
             </a>
-            <span className="text-gold-border/40 hidden sm:inline">|</span>
+
+            {/* Divider */}
+            <span className="text-gold-border/40 hidden sm:inline">
+              |
+            </span>
+
+            {/* WhatsApp */}
             <a
-              href={`https://wa.me/${companyDetails.whatsapp.replace(/\+/g, "").replace(/\s/g, "")}?text=I%20am%20interested%20in%20Terra%20Elegance%20floors`}
+              href={`https://wa.me/${companyDetails.whatsapp
+                .replace(/\+/g, "")
+                .replace(/\s/g, "")}?text=I%20am%20interested%20in%20Terra%20Elegance%20floors`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 hover:text-gold transition-colors duration-300"
             >
               <MessageSquare className="w-3.5 h-3.5 text-gold" />
-              <span>WhatsApp Chat</span>
+
+              <span>
+                WhatsApp Chat
+              </span>
             </a>
           </motion.div>
         </motion.div>
       </div>
 
-      {/* Floating Status Pill (Bottom-Right) */}
+      {/* =========================================================
+          FLOATING STATUS PILL — BOTTOM RIGHT
+      ========================================================= */}
       <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
+        initial={{
+          opacity: 0,
+          x: 50,
+        }}
+        animate={{
+          opacity: 1,
+          x: 0,
+        }}
+        transition={{
+          delay: 1.2,
+          duration: 0.8,
+        }}
         className="absolute bottom-10 right-6 md:right-12 z-20"
       >
         <Link
@@ -162,27 +300,40 @@ export function Hero() {
           className="flex items-center space-x-2.5 px-4 py-3 bg-dark-surface/90 border border-gold-border hover:border-gold transition-all duration-500 shadow-2xl backdrop-blur-md group"
         >
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
           </span>
+
           <span className="text-[9px] font-sans font-bold uppercase tracking-[0.2em] text-warm-white group-hover:text-gold transition-colors">
             Terra Elegance — Now Selling
           </span>
         </Link>
       </motion.div>
 
-      {/* Animated Scroll Indicator (Bottom-Left) */}
+      {/* =========================================================
+          ANIMATED SCROLL INDICATOR — BOTTOM LEFT
+      ========================================================= */}
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, duration: 0.8 }}
+        initial={{
+          opacity: 0,
+          y: -20,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          delay: 1.5,
+          duration: 0.8,
+        }}
         className="absolute bottom-10 left-6 md:left-12 z-20 flex flex-col items-center space-y-3.5 pointer-events-none"
       >
         <span className="text-[8px] uppercase tracking-[0.25em] text-warm-muted writing-mode-vertical">
           Scroll Down
         </span>
+
         <div className="h-12 w-[1px] bg-gold-border/40 relative overflow-hidden">
-          {/* Pulsing scroll indicator line */}
           <motion.div
             animate={{
               y: ["0%", "100%", "0%"],
@@ -201,3 +352,4 @@ export function Hero() {
 }
 
 export default Hero;
+
