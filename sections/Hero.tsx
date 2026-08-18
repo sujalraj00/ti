@@ -80,7 +80,7 @@ export function Hero() {
       ========================================================= */}
       <motion.div
         initial={{ scale: 1.1, opacity: 0 }}
-        animate={{ scale: 1, opacity: 0.35 }}
+        animate={{ scale: 1, opacity: 1.5 }}
         transition={{
           duration: 2.2,
           ease: "easeOut",
@@ -129,14 +129,14 @@ export function Hero() {
             {/* Soft ambient glow */}
             <div className="absolute -inset-4 bg-gold/5 rounded-2xl blur-2xl pointer-events-none" />
 
-            <Image
+            {/* <Image
               src="/TerraInfraconLogo.png"
               alt="Terra Infracon"
               width={270}
               height={62}
               className="relative w-[220px] md:w-[270px] h-auto object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.15)]"
               priority
-            />
+            /> */}
           </motion.div>
         </div>
       </div>
@@ -157,7 +157,7 @@ export function Hero() {
           {/* =====================================================
               EYEBROW LABEL
           ===================================================== */}
-          <motion.div
+          {/* <motion.div
             variants={itemVariants}
             className="flex items-center space-x-2"
           >
@@ -166,7 +166,7 @@ export function Hero() {
             <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">
               GURUGRAM · SOHNA · INDIA
             </span>
-          </motion.div>
+          </motion.div> */}
 
           {/* =====================================================
               MAIN ANIMATED HEADLINE

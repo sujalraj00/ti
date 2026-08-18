@@ -10,10 +10,10 @@ export const projects: Project[] = [
     rera: "RC/REP/HARERA/GGM/854/2024/81",
     shortDescription: "Luxury low-rise independent residential floors at the foot of the scenic Aravallis, offering comfort, privacy, and modern features.",
     description: "Terra Elegance is a symbol of modern architecture, prime location, and lifestyle convenience. Designed as high-end independent residential floors, it offers spacious layouts, lush green surroundings, and custom amenities that cater to both comfort and class. Nestled at the foot of the scenic Aravalli hills, these floors provide a serene living experience while remaining seamlessly connected to the business centers of Gurgaon.",
-    startingPrice: "[[Starting Price - ₹1.25 Cr* Onwards]]",
+    startingPrice: "",
     configurations: "[[Configurations - 3 BHK + Lounge & 4 BHK Luxury Floors]]",
-    unitSizes: "[[Unit Sizes - 1800 - 2400 Sq.Ft.]]",
-    possessionDate: "[[Possession Date - December 2027]]",
+    unitSizes: "",
+    possessionDate: "",
     features: [
       "Low-Rise Boutique Floors",
       "Dedicated High-Speed Lifts",
@@ -22,9 +22,9 @@ export const projects: Project[] = [
       "Scenic Aravalli Range Views"
     ],
     highlights: [
-      { label: "Plot Sizes", value: "[[Plot Sizes - 250 to 350 Sq.Yds]]" },
+      { label: "Plot Sizes", value: "[[Plot Sizes - 120 to 146 Sq.Yds]]" },
       { label: "Stilt Parking", value: "Dedicated Parking Slots + Servant Quarter" },
-      { label: "Terrace Allocation", value: "Private Demarcated Rooftop Areas" },
+      { label: "Terrace Allocation", value: "Private Demarcated Rooftop Areas (Terrace access only for 3 floor unit)" },
       { label: "Security Level", value: "3-Tier Gated Security System" },
       { label: "Ventilation", value: "3-Side Open Spacious Layouts" },
       { label: "RERA Reg Number", value: "RC/REP/HARERA/GGM/854/2024/81" }
@@ -154,7 +154,7 @@ export const projects: Project[] = [
     name: "Terra Elegance Phase II",
     type: "Premium High-Rise Residences",
     status: "Launch Soon",
-    location: "Sector-2, Sohna, Gurugram",
+    location: "Sector -7, precore city,sohna (South Gurugram)",
     rera: "[[Pending HARERA Approval]]",
     shortDescription: "Premium high-rise apartment towers with panoramic Aravalli views and state-of-the-art clubhouse amenities.",
     description: "Terra Heights will redefine the skyline of Sohna. Offering 2, 3 & 4 BHK high-rise condominiums with custom-engineered luxury, this project features wrap-around balconies, private foyers, and a double-height luxury clubhouse complete with infinity pools and Aravalli-facing sky lounges.",
@@ -172,7 +172,7 @@ export const projects: Project[] = [
     locationAdvantages: [],
     specifications: [],
     images: {
-      hero: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1920&q=80",
+      hero: "/terra-elegance/terra2homepage.png",
       gallery: [],
       floorPlans: [],
       masterPlan: "[[Master Plan Image Placeholder]]",

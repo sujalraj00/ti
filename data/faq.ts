@@ -28,7 +28,7 @@ export const faqItems: FAQItem[] = [
   {
     id: "faq5",
     question: "Is there home loan assistance available?",
-    answer: "Yes, Terra Infracon works in partnership with leading national banks (SBI, ICICI Bank, HDFC, Axis Bank, and LIC Housing Finance) to offer seamless home loan approvals and competitive interest rates for our buyers.",
+    answer: "Yes, Terra Infracon works in partnership with leading national bank (HDFC Bank) to offer seamless home loan approvals and competitive interest rates for our buyers.",
     category: "Payment",
   },
   {

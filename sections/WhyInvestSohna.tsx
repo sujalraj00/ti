@@ -14,7 +14,7 @@ export function WhyInvestSohna() {
     {
       icon: Map,
       title: "Unmatched Connectivity",
-      description: "Seamless travel via the 6-lane Sohna Elevated Highway (15-min to Rajiv Chowk) and direct corridors linking to KMP Expressway and Delhi-Mumbai Expressway.",
+      description: "Seamless travel via the 6-lane Sohna Elevated Highway (25-min to Rajiv Chowk) and direct corridors linking to KMP Expressway and Delhi-Mumbai Expressway.",
     },
     {
       icon: Layers,
