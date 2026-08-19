@@ -144,28 +144,34 @@ export default function ProjectDetailsPage({
               <div className="space-y-3">
                 <input
                   type="text"
+                  id="launch-soon-name"
                   name="name"
                   required
                   disabled={isSubmitting}
                   placeholder="Your Name"
+                  suppressHydrationWarning
                   className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-3 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors disabled:opacity-50"
                 />
 
                 <input
                   type="tel"
+                  id="launch-soon-phone"
                   name="phone"
                   required
                   disabled={isSubmitting}
                   placeholder="Phone Number"
+                  suppressHydrationWarning
                   className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-3 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors disabled:opacity-50"
                 />
 
                 <input
                   type="email"
+                  id="launch-soon-email"
                   name="email"
                   required
                   disabled={isSubmitting}
                   placeholder="Email Address"
+                  suppressHydrationWarning
                   className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-3 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors disabled:opacity-50"
                 />
               </div>
@@ -952,28 +958,34 @@ export default function ProjectDetailsPage({
                 <div className="space-y-3">
                   <input
                     type="text"
+                    id="brochure-name"
                     name="name"
                     required
                     disabled={isSubmitting}
                     placeholder="Your Name"
+                    suppressHydrationWarning
                     className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-2.5 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors disabled:opacity-50"
                   />
 
                   <input
                     type="tel"
+                    id="brochure-phone"
                     name="phone"
                     required
                     disabled={isSubmitting}
                     placeholder="Phone Number"
+                    suppressHydrationWarning
                     className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-2.5 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors disabled:opacity-50"
                   />
 
                   <input
                     type="email"
+                    id="brochure-email"
                     name="email"
                     required
                     disabled={isSubmitting}
                     placeholder="Email Address"
+                    suppressHydrationWarning
                     className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-2.5 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors disabled:opacity-50"
                   />
                 </div>
