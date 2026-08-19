@@ -55,6 +55,226 @@ export default function ProjectDetailsPage({
   // Get other/related projects
   const relatedProjects = projects.filter((p) => p.id !== project.id);
 
+  // ── LAUNCHING SOON: minimal page ──────────────────────────────────────
+  if (project.status === "Launch Soon") {
+    return (
+      <div className="w-full bg-dark-bg relative overflow-hidden pb-16">
+        {/* JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(projectSchema),
+          }}
+        />
+
+        {/* Hero Banner */}
+        <section className="relative h-[70dvh] w-full overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url('${project.images.hero}')`,
+            }}
+          />
+        </section>
+
+        {/* Contact for More Information */}
+        <section className="max-w-2xl mx-auto px-6 md:px-12 pt-16 relative z-10">
+          <div className="bg-dark-surface border border-gold-border p-8 md:p-10 space-y-6 shadow-2xl">
+            <div className="text-center space-y-2">
+              <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">
+                Coming Soon
+              </span>
+
+              <h2 className="font-serif text-2xl md:text-3xl font-bold text-warm-white">
+                Contact Us for More Information
+              </h2>
+
+              <p className="text-sm text-warm-muted font-sans font-light leading-relaxed max-w-md mx-auto">
+                This project is launching soon. Register your interest below and
+                our team will reach out with exclusive pre-launch details.
+              </p>
+            </div>
+
+            {/* Enquiry Form */}
+            <form
+              onSubmit={async (e: React.FormEvent<HTMLFormElement>) => {
+                e.preventDefault();
+                setIsSubmitting(true);
+                setSubmitMessage(null);
+                setSubmitError(null);
+
+                const formData = new FormData(e.currentTarget);
+                const payload = {
+                  name: formData.get("name") as string,
+                  phone: formData.get("phone") as string,
+                  email: formData.get("email") as string,
+                  project: project.name,
+                  message: "Pre-launch Interest Registration",
+                  consent: true,
+                };
+
+                try {
+                  const response = await fetch("/api/contact", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload),
+                  });
+                  const result = await response.json();
+
+                  if (response.ok && result.success) {
+                    setSubmitMessage(
+                      "Thank you! Your interest has been registered. We will contact you with pre-launch details soon."
+                    );
+                  } else {
+                    setSubmitError(
+                      result.message ||
+                      "Failed to submit request. Please try again."
+                    );
+                  }
+                } catch {
+                  setSubmitError(
+                    "A connection error occurred. Please try again later."
+                  );
+                } finally {
+                  setIsSubmitting(false);
+                }
+              }}
+              className="space-y-4"
+            >
+              <div className="space-y-3">
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  disabled={isSubmitting}
+                  placeholder="Your Name"
+                  className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-3 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors disabled:opacity-50"
+                />
+
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  disabled={isSubmitting}
+                  placeholder="Phone Number"
+                  className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-3 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors disabled:opacity-50"
+                />
+
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  disabled={isSubmitting}
+                  placeholder="Email Address"
+                  className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-3 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors disabled:opacity-50"
+                />
+              </div>
+
+              {submitMessage && (
+                <p className="text-[11px] text-gold font-sans font-medium bg-gold/10 border border-gold/20 p-3">
+                  {submitMessage}
+                </p>
+              )}
+
+              {submitError && (
+                <p className="text-[11px] text-red-500 font-sans font-medium bg-red-950/20 border border-red-900/30 p-3">
+                  {submitError}
+                </p>
+              )}
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-gold text-dark-bg hover:bg-gold-light py-3.5 font-sans text-xs uppercase tracking-widest font-bold transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50"
+              >
+                <Mail className="w-4 h-4" />
+                <span>
+                  {isSubmitting
+                    ? "Submitting..."
+                    : "Register Interest"}
+                </span>
+              </button>
+            </form>
+
+            {/* Call / WhatsApp */}
+            <div className="grid grid-cols-2 gap-3 pt-2">
+              <a
+                href={`tel:${companyDetails.phone}`}
+                className="py-3 border border-gold-border/40 hover:border-gold text-center text-xs font-bold text-warm-white uppercase tracking-wider flex items-center justify-center space-x-1.5 transition-colors"
+              >
+                <Phone className="w-3.5 h-3.5 text-gold" />
+                <span>Call Us</span>
+              </a>
+
+              <a
+                href={`https://wa.me/${companyDetails.whatsapp
+                  .replace(/\+/g, "")
+                  .replace(/\s/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-3 border border-gold-border/40 hover:border-gold text-center text-xs font-bold text-warm-white uppercase tracking-wider flex items-center justify-center space-x-1.5 transition-colors"
+              >
+                <MessageSquare className="w-3.5 h-3.5 text-gold" />
+                <span>WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Projects */}
+        {relatedProjects.length > 0 && (
+          <section className="max-w-7xl mx-auto px-6 md:px-12 pt-20 border-t border-gold-border/15 mt-20 relative z-10">
+            <div className="flex flex-col space-y-2 mb-10 text-left">
+              <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">
+                Explore More
+              </span>
+
+              <h3 className="font-serif text-2xl md:text-3xl font-bold text-warm-white">
+                Related Residences
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {relatedProjects.map((p) => (
+                <div
+                  key={p.id}
+                  className="border border-gold-border/20 bg-dark-surface p-6 flex flex-col justify-between space-y-6 group"
+                >
+                  <div className="space-y-2">
+                    <span className="text-[9px] uppercase tracking-widest text-gold font-bold">
+                      {p.type}
+                    </span>
+
+                    <h4 className="font-serif text-xl font-bold text-warm-white group-hover:text-gold transition-colors">
+                      {p.name}
+                    </h4>
+
+                    <div className="flex items-center space-x-1.5 text-xs text-warm-muted font-sans">
+                      <MapPin className="w-3.5 h-3.5 text-gold/80" />
+                      <span>{p.location}</span>
+                    </div>
+
+                    <p className="text-xs text-warm-muted leading-relaxed font-sans font-light line-clamp-2 pt-2">
+                      {p.shortDescription}
+                    </p>
+                  </div>
+
+                  <Link
+                    href={`/projects/${p.id}`}
+                    className="text-xs font-bold text-gold uppercase tracking-widest hover:underline inline-flex items-center space-x-1"
+                  >
+                    <span>View Details</span>
+                    <span>→</span>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+    );
+  }
+
   // Form submission handler
   const handleBrochureRequest = async (
     e: React.FormEvent<HTMLFormElement>
@@ -192,8 +412,8 @@ export default function ProjectDetailsPage({
                     )
                   }
                   className={`px-6 py-4.5 text-[10px] font-sans uppercase tracking-widest border-b-2 font-bold transition-all ${activeTab === tab
-                      ? "border-gold text-gold"
-                      : "border-transparent text-warm-muted hover:text-warm-white"
+                    ? "border-gold text-gold"
+                    : "border-transparent text-warm-muted hover:text-warm-white"
                     }`}
                 >
                   {tab}
@@ -471,8 +691,8 @@ export default function ProjectDetailsPage({
                           key={idx}
                           onClick={() => setSelectedFloorPlan(idx)}
                           className={`px-4.5 py-2.5 text-[10px] font-sans uppercase tracking-widest border transition-all duration-300 ${selectedFloorPlan === idx
-                              ? "bg-gold text-dark-bg border-gold font-bold"
-                              : "bg-transparent text-warm-white border-gold-border/20 hover:border-gold/50"
+                            ? "bg-gold text-dark-bg border-gold font-bold"
+                            : "bg-transparent text-warm-white border-gold-border/20 hover:border-gold/50"
                             }`}
                         >
                           {displayName}
