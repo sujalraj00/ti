@@ -94,8 +94,8 @@ export function Hero() {
           loop
           muted
           playsInline
-          poster="/terra-elegance/homepage-banner.png"
-          className="w-full h-full object-cover"
+          poster="/terra-elegance/homepage-banner-new.png"
+          className="w-full h-full object-contain object-center bg-dark-bg"
         >
           <source
             src="/terra-elegance/cover-video.mp4"

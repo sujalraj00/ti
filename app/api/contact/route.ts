@@ -32,6 +32,18 @@ export async function POST(request: Request) {
 
     const isSmtpConfigured = process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS;
 
+    if (!isSmtpConfigured) {
+      console.error("SMTP configurations are missing in environment variables. Aborting send.");
+      return NextResponse.json(
+        {
+          success: false,
+          message:
+            "SMTP is not configured on the server. Please provide SMTP_HOST, SMTP_USER and SMTP_PASS environment variables so emails can be sent.",
+        },
+        { status: 500 }
+      );
+    }
+
     if (isSmtpConfigured) {
       // Send real email
       await transporter.sendMail({

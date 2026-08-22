@@ -121,7 +121,7 @@ export const projects: Project[] = [
       }
     ],
     images: {
-      hero: "/terra-elegance/homepage-banner.png",
+      hero: "/terra-elegance/homepage-banner-new.png",
       gallery: [
         "/terra-elegance/3d-view/6.jpg",
         "/terra-elegance/3d-view/living-room-dv-set.jpeg",
