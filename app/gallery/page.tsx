@@ -5,6 +5,7 @@ import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 import { galleryImages } from "../../data/gallery";
 import { FadeIn } from "../../animations/FadeIn";
+import { SampleStar, SampleDisclaimer } from "../../components/SampleMark";
 
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
@@ -57,6 +58,7 @@ export default function GalleryPage() {
           <p className="text-xs md:text-sm uppercase tracking-widest text-warm-muted">
             Explore Interiors, Facades, Drone Vistas, and Construction Milestones
           </p>
+          <SampleDisclaimer className="pt-2 not-italic uppercase tracking-widest text-[10px]" />
         </div>
       </section>
 
@@ -99,6 +101,7 @@ export default function GalleryPage() {
                     loading="lazy"
                     className="w-full h-auto object-cover group-hover:scale-[1.04] transition-all duration-700 ease-out"
                   />
+                  <SampleStar />
                 </div>
 
                 {/* Dark Gold Gradient Layer */}
@@ -170,6 +173,7 @@ export default function GalleryPage() {
                 alt={filteredImages[lightboxIndex].alt}
                 className="max-w-full max-h-full object-contain border border-gold-border/20 shadow-2xl"
               />
+              <SampleStar className="top-2 right-2" />
             </div>
             {/* Image descriptors */}
             <div className="text-center space-y-1 max-w-xl">
@@ -182,6 +186,7 @@ export default function GalleryPage() {
               <p className="text-xs text-warm-muted leading-relaxed font-sans font-light">
                 {filteredImages[lightboxIndex].description}
               </p>
+              <SampleDisclaimer className="pt-1" />
             </div>
           </div>
         </div>

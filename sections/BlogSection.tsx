@@ -7,6 +7,7 @@ import { blogPosts } from "../data/blogs";
 import { Button } from "../components/ui/Button";
 import { Card } from "../components/ui/Card";
 import { FadeIn } from "../animations/FadeIn";
+import { SampleStar } from "../components/SampleMark";
 
 export function BlogSection() {
   const featuredBlogs = blogPosts.slice(0, 3);
@@ -56,6 +57,7 @@ export function BlogSection() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-contain group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
+                    <SampleStar />
                     <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
                     
                     {/* Category Pill */}

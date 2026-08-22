@@ -8,6 +8,7 @@ import { projects } from "../../data/project";
 import { Button } from "../../components/ui/Button";
 import { Card } from "../../components/ui/Card";
 import { FadeIn } from "../../animations/FadeIn";
+import { SampleStar, SampleDisclaimer } from "../../components/SampleMark";
 
 export default function ProjectsDirectory() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -111,6 +112,7 @@ export default function ProjectsDirectory() {
                       sizes="(max-width: 768px) 100vw, 400px"
                       className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
                     />
+                    <SampleStar className="left-3 right-auto top-3" />
 
                     {/* Status badge */}
                     <div className="absolute top-4 right-4 bg-dark-bg/90 border border-gold-border text-[9px] uppercase tracking-widest font-bold px-3 py-1 text-gold">
@@ -164,6 +166,9 @@ export default function ProjectsDirectory() {
               </FadeIn>
             ))}
           </div>
+        )}
+        {filteredProjects.length > 0 && (
+          <SampleDisclaimer className="mt-8" />
         )}
       </section>
 

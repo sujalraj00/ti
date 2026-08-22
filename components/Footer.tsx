@@ -175,6 +175,7 @@ export function Footer() {
         {/* RERA Disclaimer */}
         <div className="border-t border-gold-border/20 pt-8 pb-4">
           <p className="text-[10px] text-warm-muted/70 leading-relaxed font-sans text-justify font-light">
+            <strong className="text-gold font-semibold">SAMPLE DESIGNS:</strong> *Sample design shown for reference/illustrative purposes only.{" "}
             <strong className="text-gold font-semibold">RERA DISCLAIMER:</strong> The project details, plans, images, specifications, and values shown on this website are intended for demonstration purposes only. Complete project details, prices, and floor plans will be updated immediately upon receiving approved final files from the client. RERA registration number: <span className="text-warm-white font-medium">{companyDetails.rera}</span>.
           </p>
         </div>

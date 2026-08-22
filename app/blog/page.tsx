@@ -8,6 +8,7 @@ import { blogPosts } from "../../data/blogs";
 import { Button } from "../../components/ui/Button";
 import { Card } from "../../components/ui/Card";
 import { FadeIn } from "../../animations/FadeIn";
+import { SampleStar } from "../../components/SampleMark";
 
 export default function BlogListingPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
@@ -73,6 +74,7 @@ export default function BlogListingPage() {
                     className="object-contain group-hover:scale-105 transition-transform duration-700 ease-out"
                     priority
                   />
+                  <SampleStar />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/80 via-transparent to-transparent lg:hidden" />
                   <div className="absolute top-4 left-4">
                     <span className="bg-gold text-dark-bg text-[10px] uppercase tracking-widest font-bold px-3 py-1">
@@ -186,6 +188,7 @@ export default function BlogListingPage() {
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-contain group-hover:scale-105 transition-transform duration-700 ease-out"
                       />
+                      <SampleStar />
                       <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
                       
                       <div className="absolute top-4 left-4">

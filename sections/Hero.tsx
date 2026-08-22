@@ -10,6 +10,7 @@ import { companyDetails } from "../data/company";
 import { Button } from "../components/ui/Button";
 import { TextReveal } from "../components/ui/TextReveal";
 import { Magnetic } from "../components/ui/Magnetic";
+import { SampleStar, SampleDisclaimer } from "../components/SampleMark";
 
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -102,6 +103,7 @@ export function Hero() {
           />
         </video>
       </motion.div>
+      <SampleStar className="top-4 right-4 md:top-6 md:right-8 z-20" />
 
       {/* =========================================================
           CINEMATIC GRADIENT OVERLAYS
@@ -196,8 +198,8 @@ export function Hero() {
             variants={itemVariants}
             className="text-sm md:text-base text-warm-muted leading-relaxed font-sans max-w-xl font-light text-balance"
           >
-            Luxury independent residential developments at the
-            scenic foot of the Aravallis — designed exclusively
+            Luxury independent residential development
+            scenic foot at the nearby of the Aravallis — designed exclusively
             for those who refuse to compromise on quality and
             space.
           </motion.p>
@@ -293,7 +295,7 @@ export function Hero() {
           delay: 1.2,
           duration: 0.8,
         }}
-        className="absolute bottom-10 right-6 md:right-12 z-20"
+        className="absolute bottom-10 right-6 md:right-12 z-20 flex flex-col items-end gap-2"
       >
         <Link
           href="/projects/terra-elegance"
@@ -309,6 +311,7 @@ export function Hero() {
             Terra Elegance — Now Selling
           </span>
         </Link>
+        <SampleDisclaimer className="max-w-[220px] text-right text-warm-white/70" />
       </motion.div>
 
       {/* =========================================================

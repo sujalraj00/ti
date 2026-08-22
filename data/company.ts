@@ -16,7 +16,7 @@ export const companyDetails: CompanyDetails = {
     building: "Universal Trade Tower",
     sector: "Sector-49",
     street: "Sohna Road",
-    city: "Gurgaon",
+    city: "Gurugram",
     state: "Haryana",
     pinCode: "122018",
   },

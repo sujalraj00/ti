@@ -9,7 +9,7 @@ export const projects: Project[] = [
     location: "Precore City, Sector-7, Sohna, Gurugram",
     rera: "RC/REP/HARERA/GGM/854/2024/81",
     shortDescription: "Luxury low-rise independent residential floors at the foot of the scenic Aravallis, offering comfort, privacy, and modern features.",
-    description: "Terra Elegance is a symbol of modern architecture, prime location, and lifestyle convenience. Designed as high-end independent residential floors, it offers spacious layouts, lush green surroundings, and custom amenities that cater to both comfort and class. Nestled at the foot of the scenic Aravalli hills, these floors provide a serene living experience while remaining seamlessly connected to the business centers of Gurgaon.",
+    description: "Terra Elegance is a symbol of modern architecture, prime location, and lifestyle convenience. Designed as high-end independent residential floors, it offers spacious layouts, lush green surroundings, and custom amenities that cater to both comfort and class. Nestled near the scenic Aravalli hills, these floors provide a serene living experience while remaining seamlessly connected to the business centers of Gurgaon.",
     startingPrice: "",
     configurations: "[[Configurations - 3 BHK + Lounge & 4 BHK Luxury Floors]]",
     unitSizes: "",

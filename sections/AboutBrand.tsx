@@ -7,6 +7,7 @@ import { motion, useInView } from "framer-motion";
 import { companyDetails } from "../data/company";
 import { FadeIn } from "../animations/FadeIn";
 import { Button } from "../components/ui/Button";
+import { SampleStar, SampleDisclaimer } from "../components/SampleMark";
 
 // Simple count up component for statistics
 interface CounterProps {
@@ -26,7 +27,7 @@ function StatCounter({ value, suffix = "" }: CounterProps) {
     const end = value;
     const duration = 2000; // 2 seconds
     const incrementTime = Math.max(Math.floor(duration / end), 20);
-    
+
     const timer = setInterval(() => {
       start += Math.ceil(end / 40); // Increment chunk size
       if (start >= end) {
@@ -56,7 +57,7 @@ export function AboutBrand() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          
+
           {/* Left Column: Brand Copy */}
           <div className="flex flex-col space-y-6 md:space-y-8 items-start">
             <div className="flex flex-col space-y-2">
@@ -64,8 +65,8 @@ export function AboutBrand() {
                 About Terra Infracon
               </span>
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-warm-white">
-                Built on integrity.<br />
-                <span className="text-gold italic font-serif font-light">Delivered with precision.</span>
+                Built on integrity<br />
+                <span className="text-gold italic font-serif font-light">Delivered with precision!</span>
               </h2>
             </div>
 
@@ -74,7 +75,7 @@ export function AboutBrand() {
               <p>{companyDetails.aboutPhilosophy}</p>
             </div>
 
-            {/* Dynamic Counter Grid */}
+            {/* Dynamic Counter Grid
             <div className="grid grid-cols-3 gap-6 md:gap-10 border-y border-gold-border/20 py-8 w-full">
               <div className="flex flex-col space-y-1.5">
                 <StatCounter value={12} suffix="+" />
@@ -94,7 +95,7 @@ export function AboutBrand() {
                   Sq.Ft. Delivered
                 </span>
               </div>
-            </div>
+            </div> */}
 
             <div className="flex items-center space-x-4">
               <Link href="/about">
@@ -122,6 +123,7 @@ export function AboutBrand() {
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-dark-bg/25 group-hover:bg-dark-bg/10 transition-colors" />
+                <SampleStar />
               </div>
             </FadeIn>
 
@@ -136,8 +138,10 @@ export function AboutBrand() {
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-dark-bg/25 group-hover:bg-dark-bg/10 transition-colors" />
+                <SampleStar />
               </div>
             </FadeIn>
+            <SampleDisclaimer className="absolute -bottom-8 left-0" />
           </div>
 
         </div>

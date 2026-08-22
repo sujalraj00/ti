@@ -14,7 +14,7 @@ export function WhyInvestSohna() {
     {
       icon: Map,
       title: "Unmatched Connectivity",
-      description: "Seamless travel via the 6-lane Sohna Elevated Highway (25-min to Rajiv Chowk) and direct corridors linking to KMP Expressway and Delhi-Mumbai Expressway.",
+      description: "Seamless travel via the 6-lane Sohna Elevated Highway (approx 20-min to Rajiv Chowk) and direct corridors linking to KMP Expressway and Delhi-Mumbai Expressway.",
     },
     {
       icon: Layers,
@@ -48,7 +48,10 @@ export function WhyInvestSohna() {
             </div>
 
             <p className="text-sm md:text-base text-warm-muted leading-relaxed font-sans font-light">
-              Sohna has transitioned from a weekend retreat to Gurugram's most premium luxury low-rise zone. As corporate hubs saturate, demand has shifted toward larger residential floor plans, scenic topography, and clean air environments.
+              Sohna has transitioned from a weekend retreat to Gurugram's most premium luxury low-rise zone. As commercial/industrial became a decentralizing in Sohna, demand has shifted toward larger residential spaces, scenic topography, and clean and green environment.
+            </p>
+            <p className="text-sm md:text-base space-y-3.5 leading-relaxed font-sans font-light">
+              MAJOR LANDMARK DISTANCE :
             </p>
 
             <div className="flex flex-col space-y-3.5 font-sans text-xs pt-2">
@@ -58,7 +61,7 @@ export function WhyInvestSohna() {
               </div>
               <div className="flex items-center space-x-3 text-warm-white">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-                <span className="font-light">25 min to Rajiv Chowk</span>
+                <span className="font-light">Approx 20 Mins to Rajiv Chowk</span>
               </div>
               <div className="flex items-center space-x-3 text-warm-white">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold" />

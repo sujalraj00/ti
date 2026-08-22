@@ -1,6 +1,6 @@
 "use client";
 
-import React, { use, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -18,6 +18,8 @@ import {
   Landmark,
   Download,
   X,
+  Lock,
+  Eye,
 } from "lucide-react";
 
 import { projects } from "../../../data/project";
@@ -26,6 +28,11 @@ import { generateProjectSchema } from "../../../data/seo";
 import { Button } from "../../../components/ui/Button";
 import { Card } from "../../../components/ui/Card";
 import { FadeIn } from "../../../animations/FadeIn";
+import { SampleStar, SampleDisclaimer } from "../../../components/SampleMark";
+import {
+  FloorPlanUnlockModal,
+  FLOOR_PLAN_UNLOCK_KEY,
+} from "../../../components/FloorPlanUnlockModal";
 
 export default function ProjectDetailsPage({
   params,
@@ -42,9 +49,17 @@ export default function ProjectDetailsPage({
 
   const [selectedFloorPlan, setSelectedFloorPlan] = useState(0);
   const [isFloorPlanLightboxOpen, setIsFloorPlanLightboxOpen] = useState(false);
+  const [isFloorPlanEnquiryOpen, setIsFloorPlanEnquiryOpen] = useState(false);
+  const [floorPlansUnlocked, setFloorPlansUnlocked] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<string | null>(null);
   const [submitError, setSubmitError] = useState<string | null>(null);
+
+  useEffect(() => {
+    setFloorPlansUnlocked(
+      sessionStorage.getItem(FLOOR_PLAN_UNLOCK_KEY) === "true"
+    );
+  }, []);
 
   if (!project) {
     notFound();
@@ -75,6 +90,7 @@ export default function ProjectDetailsPage({
               backgroundImage: `url('${project.images.hero}')`,
             }}
           />
+          <SampleStar className="top-4 right-4 md:top-6 md:right-6" />
         </section>
 
         {/* Contact for More Information */}
@@ -355,6 +371,7 @@ export default function ProjectDetailsPage({
             backgroundImage: `url('${project.images.hero}')`,
           }}
         />
+        <SampleStar className="top-4 right-4 md:top-6 md:right-6" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pb-10">
           <div className="max-w-4xl flex flex-col space-y-4 items-start">
@@ -638,7 +655,9 @@ export default function ProjectDetailsPage({
                           sizes="(max-width: 768px) 100vw, 672px"
                           className="object-contain p-2"
                         />
+                        <SampleStar />
                       </div>
+                      <SampleDisclaimer />
 
                       <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs pt-2 font-sans">
                         <span className="text-warm-muted">
@@ -662,9 +681,12 @@ export default function ProjectDetailsPage({
                 3. FLOOR & MASTER PLANS
             ====================================================== */}
             <div className="border-t border-gold-border/25 pt-10 space-y-6">
-              <h3 className="font-serif text-2xl font-bold text-warm-white">
-                Floor & Master Plans
-              </h3>
+              <div className="space-y-2">
+                <h3 className="font-serif text-2xl font-bold text-warm-white">
+                  Floor & Master Plans
+                </h3>
+                <SampleDisclaimer />
+              </div>
 
               {project.images.floorPlans &&
                 project.images.floorPlans.length > 0 &&
@@ -710,10 +732,7 @@ export default function ProjectDetailsPage({
                   {/* Active plan preview */}
                   <div className="border border-gold-border/20 bg-dark-surface/40 p-6 flex flex-col items-center space-y-4">
                     <div
-                      className="relative w-full h-[400px] md:h-[500px] bg-dark-bg border border-gold-border/10 cursor-pointer overflow-hidden group"
-                      onClick={() =>
-                        setIsFloorPlanLightboxOpen(true)
-                      }
+                      className="relative w-full h-[400px] md:h-[500px] bg-dark-bg border border-gold-border/10 overflow-hidden group"
                     >
                       <Image
                         src={
@@ -729,14 +748,40 @@ export default function ProjectDetailsPage({
                         }
                         fill
                         sizes="(max-width: 768px) 100vw, 66vw"
-                        className="object-contain p-4 group-hover:scale-[1.02] transition-transform duration-500"
+                        className={`object-contain p-4 transition-all duration-500 ${
+                          floorPlansUnlocked
+                            ? "group-hover:scale-[1.02]"
+                            : "blur-md scale-105 pointer-events-none select-none"
+                        }`}
                       />
+                      <SampleStar />
 
-                      <div className="absolute inset-0 bg-dark-bg/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span className="px-4 py-2 border border-gold text-gold font-bold text-xs uppercase tracking-widest bg-dark-surface">
-                          Click to Expand Layout
-                        </span>
-                      </div>
+                      {floorPlansUnlocked ? (
+                        <button
+                          type="button"
+                          onClick={() => setIsFloorPlanLightboxOpen(true)}
+                          className="absolute inset-0 bg-dark-bg/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer"
+                        >
+                          <span className="px-4 py-2 border border-gold text-gold font-bold text-xs uppercase tracking-widest bg-dark-surface">
+                            Click to Expand Layout
+                          </span>
+                        </button>
+                      ) : (
+                        <div className="absolute inset-0 bg-dark-bg/70 backdrop-blur-[2px] flex flex-col items-center justify-center gap-4 px-6 text-center">
+                          <Lock className="w-10 h-10 text-gold" aria-hidden="true" />
+                          <p className="text-xs text-warm-muted font-sans font-light max-w-xs">
+                            Floor plans are locked. Submit a short enquiry to view the layout.
+                          </p>
+                          <Button
+                            variant="primary"
+                            size="sm"
+                            onClick={() => setIsFloorPlanEnquiryOpen(true)}
+                          >
+                            <Eye className="w-3.5 h-3.5" />
+                            <span>View</span>
+                          </Button>
+                        </div>
+                      )}
                     </div>
 
                     {/* Preview controls */}
@@ -778,27 +823,40 @@ export default function ProjectDetailsPage({
                       </div>
 
                       <div className="flex space-x-3 w-full sm:w-auto justify-center">
-                        <Button
-                          variant="gold-outline"
-                          size="sm"
-                          onClick={() =>
-                            setIsFloorPlanLightboxOpen(true)
-                          }
-                        >
-                          Enlarge Plan
-                        </Button>
+                        {floorPlansUnlocked ? (
+                          <>
+                            <Button
+                              variant="gold-outline"
+                              size="sm"
+                              onClick={() =>
+                                setIsFloorPlanLightboxOpen(true)
+                              }
+                            >
+                              View
+                            </Button>
 
-                        <a
-                          href={
-                            project.images.floorPlans[
-                            selectedFloorPlan
-                            ]
-                          }
-                          download
-                          className="px-4 py-2 border border-gold bg-gold text-dark-bg font-sans text-[10px] uppercase tracking-widest font-bold hover:bg-gold-light transition-all flex items-center"
-                        >
-                          Download Layout
-                        </a>
+                            <a
+                              href={
+                                project.images.floorPlans[
+                                selectedFloorPlan
+                                ]
+                              }
+                              download
+                              className="px-4 py-2 border border-gold bg-gold text-dark-bg font-sans text-[10px] uppercase tracking-widest font-bold hover:bg-gold-light transition-all flex items-center"
+                            >
+                              Download Layout
+                            </a>
+                          </>
+                        ) : (
+                          <Button
+                            variant="primary"
+                            size="sm"
+                            onClick={() => setIsFloorPlanEnquiryOpen(true)}
+                          >
+                            <Lock className="w-3.5 h-3.5" />
+                            <span>View</span>
+                          </Button>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -1130,7 +1188,9 @@ export default function ProjectDetailsPage({
                   alt="Floor Plan Full Resolution"
                   className="max-w-full max-h-full object-contain border border-gold-border/20 shadow-2xl bg-white"
                 />
+                <SampleStar className="top-3 right-3" />
               </div>
+              <SampleDisclaimer className="text-center" />
 
               <div className="text-center space-y-1">
                 <h2 className="font-serif text-lg font-bold text-warm-white text-center">
@@ -1168,6 +1228,18 @@ export default function ProjectDetailsPage({
             </div>
           </div>
         )}
+
+      {isFloorPlanEnquiryOpen && (
+        <FloorPlanUnlockModal
+          projectName={project.name}
+          onClose={() => setIsFloorPlanEnquiryOpen(false)}
+          onUnlocked={() => {
+            setFloorPlansUnlocked(true);
+            setIsFloorPlanEnquiryOpen(false);
+            setIsFloorPlanLightboxOpen(true);
+          }}
+        />
+      )}
     </div>
   );
 }

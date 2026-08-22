@@ -20,6 +20,7 @@ import BlogSection from "../sections/BlogSection";
 import { Button } from "../components/ui/Button";
 import { Card } from "../components/ui/Card";
 import { FadeIn } from "../animations/FadeIn";
+import { SampleStar, SampleDisclaimer } from "../components/SampleMark";
 
 export default function Home() {
   const businessSchema = generateLocalBusinessSchema(companyDetails);
@@ -96,6 +97,7 @@ export default function Home() {
                     sizes="(max-width: 768px) 100vw, 300px"
                     className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
                   />
+                  <SampleStar />
                   {/* Subtle dark-gold gradient cover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/90 via-dark-bg/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
                   
@@ -112,6 +114,7 @@ export default function Home() {
               </FadeIn>
             ))}
           </div>
+          <SampleDisclaimer className="mt-6" />
 
         </div>
       </section>

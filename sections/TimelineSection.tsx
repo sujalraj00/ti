@@ -15,11 +15,11 @@ export function TimelineSection() {
       title: "Expanding Our Real Estate Presence",
       description: "We began operating at a growing scale, focusing on land and property opportunities across Sohna and Gurugram, while strengthening our understanding of the local real estate market.",
     },
-    {
-      year: "2020—Expansion into Sohna",
-      title: "A New Chapter of Growth",
-      description: "In 2020, Terra Infracon expanded its operations and obtained the required licenses to establish a stronger presence in Sohna. During this phase, the company acquired and developed Precore City, marking an important milestone in our growth journey.",
-    },
+    // {
+    //   year: "2020—Expansion into Sohna",
+    //   title: "A New Chapter of Growth",
+    //   description: "In 2020, Terra Infracon expanded its operations and obtained the required licenses to establish a stronger presence in Sohna. During this phase, the company acquired and developed Precore City, marking an important milestone in our growth journey.",
+    // },
     {
       year: "2024—Terra Elegance",
       title: "Launching Our First Licensed Project",

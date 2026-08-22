@@ -6,6 +6,7 @@ import { companyDetails } from "../../data/company";
 import TimelineSection from "../../sections/TimelineSection";
 import { Card } from "../../components/ui/Card";
 import { FadeIn } from "../../animations/FadeIn";
+import { SampleStar, SampleDisclaimer } from "../../components/SampleMark";
 
 export default function AboutPage() {
   const values = [
@@ -85,12 +86,14 @@ export default function AboutPage() {
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-dark-bg/20" />
+                <SampleStar />
               </div>
               {/* Overlapping Badge */}
               <div className="absolute -bottom-6 -left-6 bg-dark-surface border border-gold-border p-6 shadow-2xl backdrop-blur-md hidden sm:flex flex-col">
                 <span className="font-serif text-4xl font-bold text-gold">12+</span>
                 <span className="text-[9px] uppercase tracking-widest text-warm-muted font-sans font-bold">Years of Trust</span>
               </div>
+              <SampleDisclaimer className="absolute -bottom-10 left-0 hidden sm:block" />
             </div>
 
           </div>

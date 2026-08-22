@@ -14,6 +14,7 @@ import { generateBlogArticleSchema } from "../../../data/seo";
 import { Button } from "../../../components/ui/Button";
 import { Card } from "../../../components/ui/Card";
 import { FadeIn } from "../../../animations/FadeIn";
+import { SampleStar, SampleDisclaimer } from "../../../components/SampleMark";
 
 export default function BlogArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = use(params);
@@ -121,8 +122,10 @@ export default function BlogArticlePage({ params }: { params: Promise<{ slug: st
             className="object-contain"
             priority
           />
+          <SampleStar />
           <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/60 via-transparent to-transparent" />
         </div>
+        <SampleDisclaimer className="mt-3" />
 
         {/* Intro Paragraphs */}
         <div className="space-y-6 text-sm md:text-base text-warm-white/90 font-sans leading-relaxed font-light">

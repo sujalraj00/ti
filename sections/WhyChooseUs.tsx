@@ -24,7 +24,7 @@ export function WhyChooseUs() {
     {
       icon: ShieldCheck,
       title: "Quality Materials",
-      description: "No compromises on what goes into your walls, floors, or finishes. We source certified Grade A RCC steel, branded CP fittings, and premium Italian marble.",
+      description: "No compromises on what goes into your walls, floors, or finishes. We source certified Grade A RCC steel, branded CP fittings, and premium tile flooring.",
     },
   ];
 
@@ -34,7 +34,7 @@ export function WhyChooseUs() {
       <div className="bg-blob bottom-1/4 left-1/4" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        
+
         {/* Title Block */}
         <div className="flex flex-col items-center text-center space-y-3 mb-20 md:mb-24">
           <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">
@@ -51,15 +51,15 @@ export function WhyChooseUs() {
           {pillars.map((item, index) => {
             const Icon = item.icon;
             return (
-              <FadeIn 
-                key={index} 
+              <FadeIn
+                key={index}
                 delay={index * 0.1}
                 direction="up"
               >
                 <Card className="flex flex-col items-start space-y-4 group h-full relative overflow-hidden" variant="glass">
                   {/* Left Highlight Indicator border appearing on hover */}
                   <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gold scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-bottom" />
-                  
+
                   {/* Premium Gold Icon */}
                   <div className="p-3 bg-dark-bg border border-gold-border text-gold group-hover:bg-gold group-hover:text-dark-bg transition-all duration-500">
                     <Icon className="w-5 h-5" />
@@ -68,7 +68,7 @@ export function WhyChooseUs() {
                   <h3 className="font-serif text-xl font-bold text-warm-white group-hover:text-gold transition-colors duration-300">
                     {item.title}
                   </h3>
-                  
+
                   <p className="text-xs md:text-sm text-warm-muted leading-relaxed font-sans font-light">
                     {item.description}
                   </p>

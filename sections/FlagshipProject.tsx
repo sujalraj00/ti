@@ -9,6 +9,7 @@ import { projects } from "../data/project";
 import { Button } from "../components/ui/Button";
 import { FadeIn } from "../animations/FadeIn";
 import { Magnetic } from "../components/ui/Magnetic";
+import { SampleStar, SampleDisclaimer } from "../components/SampleMark";
 
 export function FlagshipProject() {
   const project = projects.find((p) => p.id === "terra-elegance");
@@ -120,6 +121,7 @@ export function FlagshipProject() {
                       />
                       {/* Gradient bottom overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/90 via-transparent to-transparent" />
+                      <SampleStar className="left-3 right-auto top-3" />
                     </div>
                   ))}
                 </div>
@@ -138,9 +140,7 @@ export function FlagshipProject() {
 
             {/* Slider Dots / Progress Controls */}
             <div className="flex justify-between items-center px-2">
-              <span className="text-[10px] uppercase tracking-[0.2em] text-warm-muted font-light">
-                Scenic Aravalli Footprint
-              </span>
+              <SampleDisclaimer className="max-w-[240px]" />
               <div className="flex space-x-2">
                 {scrollSnaps.map((_, index) => (
                   <button
