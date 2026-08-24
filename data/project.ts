@@ -73,24 +73,24 @@ export const projects: Project[] = [
         category: "Structure",
         details: [
           "Earthquake resistant RCC framed structure design.",
-          "High-grade brickwork with environment-friendly AAC blocks.",
-          "Internal walls finished with POP punning and luxury plastic emulsion paint."
+          "High-grade brickwork in construction.",
+          "Internal walls finished with POP punning and luxury emulsion paint."
         ]
       },
       {
         category: "Flooring",
         details: [
-          "Imported Italian marble flooring in Living, Dining, and Entrance Foyer.",
+          "Imported tile flooring in bedroom, living, dinning and entrance foyer",
           "Premium laminated wooden flooring in Master Bedroom.",
-          "Vitrified double-charged tile flooring in other bedrooms.",
+          "Vitrified double-charged tile flooring and wall in all washrooms.",
           "Anti-skid premium ceramic tile flooring in balconies and washrooms."
         ]
       },
       {
         category: "Kitchen & Utility",
         details: [
-          "Modern modular kitchen cabinet design with soft-close hinges.",
-          "Polished granite counter-top with double-bowl stainless steel sink.",
+          "Modern modular kitchen cabinet design with ⁠hings and chimney",
+          "Polished granite counter-top with stainless steel sink.",
           "Dedicated utility balcony for washing machine and drying area."
         ]
       },
@@ -98,25 +98,24 @@ export const projects: Project[] = [
         category: "Washrooms & Fittings",
         details: [
           "Designer ceramic tiles on walls up to false ceiling height.",
-          "Premium CP and Sanitary fittings from Kohler / Jaquar or equivalent.",
+          "Premium CP and Sanitary fittings from Jaquar or equivalent.",
           "Wall-mounted WC with concealed cistern and granite counter wash basins."
         ]
       },
       {
         category: "Doors & Windows",
         details: [
-          "8-feet high polished teak wood main entrance door with smart lock.",
+          "8-feet imported swan timber wood main entrance door with smart lock.",
           "Hardwood internal door frames with flush shutters.",
-          "UPVC sliding windows with toughened glass and mesh screens."
+          "UPVC sliding windows with toughened glass and mesh screens and exhaust fan."
         ]
       },
       {
         category: "Electrical & Smart Home",
         details: [
-          "Concealed copper wiring with modular switches (Legrand/Schneider).",
-          "Split AC piping in Living room and all bedrooms.",
-          "100% power backup setup with dual-metering.",
-          "Smart Video Door Phone connected to the gate security."
+          "Concealed copper wiring with modular switches.",
+          "Split AC piping in all bedrooms.",
+          "100% power backup setup with dual-metering."
         ]
       }
     ],
