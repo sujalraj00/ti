@@ -10,19 +10,19 @@ export const faqItems: FAQItem[] = [
   {
     id: "faq2",
     question: "What is the expected possession timeline for Terra Elegance?",
-    answer: "The project is currently under construction. Infrastructure development is progressing rapidly. The estimated delivery date is [[Possession Date - December 2027]]. Progress updates are shared quarterly.",
+    answer: "The project is currently under construction. Infrastructure development is progressing rapidly. The estimated delivery date is [[Possession Date - December 2026]]. Progress updates are shared quarterly.",
     category: "Project",
   },
   {
     id: "faq3",
     question: "Are lifts and rooftop access allocated per floor?",
-    answer: "Yes, every plot structure features high-speed automatic passenger lifts starting from the stilt level. Rooftops are demarcated so that each floor resident gets a private dedicated rooftop lounge zone.",
+    answer: "Yes, every plot structure features high-speed automatic passenger lifts starting from the stilt level. Rooftops are demarcated and only third floor resident gets a private dedicated rooftop lounge zone.",
     category: "Project",
   },
   {
     id: "faq4",
     question: "What are the pricing configurations and payment plans?",
-    answer: "Our premium floors start from [[Project Starting Price - ₹1.25 Cr* Onwards]] for 3 BHK layouts. We offer flexible payment plans, including construction-linked plans (CLP) and customized payment milestones. Please reach out to our team for detailed cost sheets.",
+    answer: "We offer flexible payment plans, including construction-linked plans (CLP) and customized payment milestones. Please reach out to our team for detailed cost sheets.",
     category: "Payment",
   },
   {
