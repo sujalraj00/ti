@@ -55,7 +55,10 @@ export default function RootLayout({
       className={`${cormorant.variable} ${inter.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-dark-bg text-warm-white font-sans selection:bg-gold selection:text-dark-bg">
+      <body
+        className="min-h-full flex flex-col bg-dark-bg text-warm-white font-sans selection:bg-gold selection:text-dark-bg"
+        suppressHydrationWarning
+      >
         <SmoothScrollProvider>
           <ScrollProgress />
           <CustomCursor />

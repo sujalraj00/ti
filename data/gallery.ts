@@ -21,7 +21,7 @@ export const galleryImages: GalleryImage[] = [
     id: "g3",
     src: "/terra-elegance/3d-view/3d-view-kitchen.jpeg",
     alt: "Terra Elegance Kitchen",
-    title: "Bespoke Modular Kitchen",
+    title: "Modular Kitchen",
     description: "Contemporary kitchen layout featuring built-in appliances, quartz counter-tops, and clean cabinets.",
     category: "interior",
   },

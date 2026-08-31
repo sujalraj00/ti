@@ -24,7 +24,7 @@ export function WhyChooseUs() {
     {
       icon: ShieldCheck,
       title: "Quality Materials",
-      description: "No compromises on what goes into your walls, floors, or finishes. We source certified Grade A RCC steel, branded CP fittings, and premium tile flooring.",
+      description: "No compromises on what goes into your walls, floors, or finishes. We source premium tile flooring.",
     },
   ];
 

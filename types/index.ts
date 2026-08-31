@@ -63,6 +63,7 @@ export interface Project {
     gallery: string[];
     floorPlans: string[];
     masterPlan: string;
+    surroundingMap?: string;
     constructionUpdates: string[];
   };
   brochureUrl: string;

@@ -748,11 +748,10 @@ export default function ProjectDetailsPage({
                         }
                         fill
                         sizes="(max-width: 768px) 100vw, 66vw"
-                        className={`object-contain p-4 transition-all duration-500 ${
-                          floorPlansUnlocked
-                            ? "group-hover:scale-[1.02]"
-                            : "blur-md scale-105 pointer-events-none select-none"
-                        }`}
+                        className={`object-contain p-4 transition-all duration-500 ${floorPlansUnlocked
+                          ? "group-hover:scale-[1.02]"
+                          : "blur-[2px] scale-105 pointer-events-none select-none"
+                          }`}
                       />
                       <SampleStar />
 
@@ -767,7 +766,7 @@ export default function ProjectDetailsPage({
                           </span>
                         </button>
                       ) : (
-                        <div className="absolute inset-0 bg-dark-bg/70 backdrop-blur-[2px] flex flex-col items-center justify-center gap-4 px-6 text-center">
+                        <div className="absolute inset-0 bg-dark-bg/40 backdrop-blur-[1px] flex flex-col items-center justify-center gap-4 px-6 text-center">
                           <Lock className="w-10 h-10 text-gold" aria-hidden="true" />
                           <p className="text-xs text-warm-muted font-sans font-light max-w-xs">
                             Floor plans are locked. Submit a short enquiry to view the layout.
@@ -923,9 +922,51 @@ export default function ProjectDetailsPage({
             </div>
 
             {/* ======================================================
+                SURROUNDING MAP
+            ====================================================== */}
+            {project.images.surroundingMap &&
+              project.images.surroundingMap.startsWith("/") && (
+                <div className="border-t border-gold-border/25 pt-10 space-y-6">
+                  <div className="space-y-2">
+                    <h3 className="font-serif text-2xl font-bold text-warm-white">
+                      Surrounding Map
+                    </h3>
+                    <SampleDisclaimer />
+                  </div>
+
+                  <div className="border border-gold-border/20 bg-dark-surface/40 p-6 flex flex-col space-y-4">
+                    <div className="relative aspect-[16/9] w-full mx-auto overflow-hidden border border-gold-border/10 bg-dark-bg">
+                      <Image
+                        src={project.images.surroundingMap}
+                        alt={`${project.name} Surrounding Map`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 800px"
+                        className="object-contain p-2"
+                      />
+                      <SampleStar />
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs pt-2 font-sans">
+                      <span className="text-warm-muted">
+                        Sector-7 Sohna, Gurugram Surrounding & Connectivity Map
+                      </span>
+
+                      <a
+                        href={project.images.surroundingMap}
+                        download="surrounding-map.jpg"
+                        className="px-4 py-2 border border-gold bg-gold text-dark-bg font-sans text-xs uppercase tracking-widest font-bold hover:bg-gold-light transition-all"
+                      >
+                        Download Surrounding Map
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+            {/* ======================================================
                 4. CONSTRUCTION UPDATES
             ====================================================== */}
-            <div className="border-t border-gold-border/25 pt-10 space-y-6">
+            {/* <div className="border-t border-gold-border/25 pt-10 space-y-6">
               <h3 className="font-serif text-2xl font-bold text-warm-white">
                 Construction Status Logs
               </h3>
@@ -967,7 +1008,7 @@ export default function ProjectDetailsPage({
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* ========================================================
@@ -977,15 +1018,15 @@ export default function ProjectDetailsPage({
             <aside className="sticky top-[100px] bg-dark-surface border border-gold-border p-6 md:p-8 space-y-6 shadow-2xl">
               <div className="space-y-1">
                 <h4 className="font-serif text-xl font-bold text-warm-white">
-                  Brochure & Price Sheet
+                  Get Brochure & Price Sheet
                 </h4>
 
-                <p className="text-[10px] uppercase tracking-widest text-gold font-bold">
+                {/* <p className="text-[10px] uppercase tracking-widest text-gold font-bold">
                   Project Downloads
-                </p>
+                </p> */}
               </div>
 
-              <div className="border-y border-gold-border/10 py-4.5 space-y-3.5 font-sans text-xs text-warm-muted">
+              {/* <div className="border-y border-gold-border/10 py-4.5 space-y-3.5 font-sans text-xs text-warm-muted">
                 <div className="flex justify-between">
                   <span>Brochure Size:</span>
 
@@ -1001,7 +1042,7 @@ export default function ProjectDetailsPage({
                     PriceSheet.PDF - 850 KB
                   </strong>
                 </div>
-              </div>
+              </div> */}
 
               {/* Form */}
               <form
@@ -1009,11 +1050,11 @@ export default function ProjectDetailsPage({
                 className="space-y-4"
               >
                 <p className="text-xs text-warm-muted font-sans leading-relaxed">
-                  Enter your details below to unlock downloads and request
-                  pricing lists.
+                  Contact us Or schedule a visit.
+
                 </p>
 
-                <div className="space-y-3">
+                {/* <div className="space-y-3">
                   <input
                     type="text"
                     id="brochure-name"
@@ -1046,7 +1087,7 @@ export default function ProjectDetailsPage({
                     suppressHydrationWarning
                     className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-2.5 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors disabled:opacity-50"
                   />
-                </div>
+                </div> */}
 
                 {submitMessage && (
                   <p className="text-[11px] text-gold font-sans font-medium bg-gold/10 border border-gold/20 p-2.5">
@@ -1060,7 +1101,7 @@ export default function ProjectDetailsPage({
                   </p>
                 )}
 
-                <button
+                {/* <button
                   type="submit"
                   disabled={isSubmitting}
                   className="w-full bg-gold text-dark-bg hover:bg-gold-light py-3 font-sans text-xs uppercase tracking-widest font-bold transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50"
@@ -1072,7 +1113,7 @@ export default function ProjectDetailsPage({
                       ? "Submitting..."
                       : "Download Brochure"}
                   </span>
-                </button>
+                </button> */}
               </form>
 
               {/* Call / WhatsApp */}

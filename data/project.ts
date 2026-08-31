@@ -11,7 +11,7 @@ export const projects: Project[] = [
     shortDescription: "Luxury low-rise independent residential floors at the foot of the scenic Aravallis, offering comfort, privacy, and modern features.",
     description: "Terra Elegance is a symbol of modern architecture, prime location, and lifestyle convenience. Designed as high-end independent residential floors, it offers spacious layouts, lush green surroundings, and custom amenities that cater to both comfort and class. Nestled near the scenic Aravalli hills, these floors provide a serene living experience while remaining seamlessly connected to the business centers of Gurgaon.",
     startingPrice: "",
-    configurations: "[[Configurations - 3 BHK + Lounge & 4 BHK Luxury Floors]]",
+    configurations: "[[Configurations - 3 BHK]]",
     unitSizes: "",
     possessionDate: "",
     features: [
@@ -22,8 +22,8 @@ export const projects: Project[] = [
       "Scenic Aravalli Range Views"
     ],
     highlights: [
-      { label: "Plot Sizes", value: "[[Plot Sizes - 120 to 146 Sq.Yds]]" },
-      { label: "Stilt Parking", value: "Dedicated Parking Slots + Servant Quarter" },
+      { label: "Plot Sizes", value: "[[Plot Sizes 146 Sq.Yds]]" },
+      { label: "Stilt Parking", value: "Dedicated Parking Slots" },
       { label: "Terrace Allocation", value: "Private Demarcated Rooftop Areas (Terrace access only for 3 floor unit)" },
       { label: "Security Level", value: "3-Tier Gated Security System" },
       { label: "Ventilation", value: "3-Side Open Spacious Layouts" },
@@ -70,52 +70,92 @@ export const projects: Project[] = [
     ],
     specifications: [
       {
-        category: "Structure",
+        category: "Bedrooms",
         details: [
-          "Earthquake resistant RCC framed structure design.",
-          "High-grade brickwork in construction.",
-          "Internal walls finished with POP punning and luxury emulsion paint."
+          "Walls: Wall putty, Emulsion paints",
+          "Floors: Wooden flooring in 1 bed, Italian look high gloss vitrified tiles 4'*2' in other",
+          "Ceiling: Oil bound distemper paints",
+          "Other: Split AC / AC piping / Provision"
         ]
       },
       {
-        category: "Flooring",
+        category: "Living / Dining Room",
         details: [
-          "Imported tile flooring in bedroom, living, dinning and entrance foyer",
-          "Premium laminated wooden flooring in Master Bedroom.",
-          "Vitrified double-charged tile flooring and wall in all washrooms.",
-          "Anti-skid premium ceramic tile flooring in balconies and washrooms."
+          "Walls: Wall putty, Emulsion paints",
+          "Floors: Italian look high gloss vitrified tiles 4'*2'",
+          "Ceiling: Oil bound distemper paint",
+          "Others: AC piping / provision"
         ]
       },
       {
-        category: "Kitchen & Utility",
+        category: "Kitchen",
         details: [
-          "Modern modular kitchen cabinet design with ⁠hings and chimney",
-          "Polished granite counter-top with stainless steel sink.",
-          "Dedicated utility balcony for washing machine and drying area."
+          "Walls / Dado: 600*300 wall tile as per design",
+          "Floors: Matt-satin finish vitrified tile / anti skid ceramic tile",
+          "Ceiling: Oil bound distemper paint",
+          "Counter: Granite Stone",
+          "Cabinet: Modular kitchen - below counter and overhead storage in plyboard (BWR, ISI mark) with SS basket and profile handles, shutters 18mm finished in laminate, SS single drain board sink. Center drawers in Innotech.",
+          "CP Fitting: ISI mark, mixer"
         ]
       },
       {
-        category: "Washrooms & Fittings",
+        category: "Toilets",
         details: [
-          "Designer ceramic tiles on walls up to false ceiling height.",
-          "Premium CP and Sanitary fittings from Jaquar or equivalent.",
-          "Wall-mounted WC with concealed cistern and granite counter wash basins."
+          "Walls: Ceramic tiles uptil lintel",
+          "Floors: Anti Skid tile 1'*1'",
+          "Ceiling: Calcium silicate grid ceiling",
+          "Others: Granite counter, Vanity storage, geyser Provision, Bevelled mirror",
+          "Sanitary: ISI mark all white sanitaryware - 1 piece floor mount WC, wall hung",
+          "CP Fitting: ISI mark, Bathing - rainshower with diverter and spout"
         ]
       },
       {
-        category: "Doors & Windows",
+        category: "Lift & Staircase",
         details: [
-          "8-feet imported swan timber wood main entrance door with smart lock.",
-          "Hardwood internal door frames with flush shutters.",
-          "UPVC sliding windows with toughened glass and mesh screens and exhaust fan."
+          "Wall: Wall putty, OBD paint",
+          "Lift: 5-6 passenger elevator",
+          "Lift Facia: Facelift with Granite stone / selected tiles, signage",
+          "Floor: Granite / Superior Kota / Indian Marble",
+          "Railing: MS railings with enamel paint finish"
         ]
       },
       {
-        category: "Electrical & Smart Home",
+        category: "Balconies",
         details: [
-          "Concealed copper wiring with modular switches.",
-          "Split AC piping in all bedrooms.",
-          "100% power backup setup with dual-metering."
+          "Wall: Paint",
+          "Railing: Designer MS railings with enamel paint finish on front, MS railings with enamel paint finish on rear",
+          "Floors: Anti skid ceramic tiles 1'*1'",
+          "Ceiling: LED surface lights, Putty with exterior grade paint as per facade design"
+        ]
+      },
+      {
+        category: "Electrical",
+        details: [
+          "Independent connection for each floor",
+          "FRLS internal Wiring"
+        ]
+      },
+      {
+        category: "Plumbing",
+        details: [
+          "Plumbing pipes: CPVC / UPVC / PVC",
+          "Water tanks: Insulated PVC"
+        ]
+      },
+      {
+        category: "Facade & External Openings",
+        details: [
+          "Facade: Texture paints, Exterior grade paints, architectural facade elements",
+          "External Openings: UPVC"
+        ]
+      },
+      {
+        category: "Internal Doors & Hardware",
+        details: [
+          "Door Frame: Seasoned Hardwood / Merandi / WPC",
+          "Main Door: Laminate Flush",
+          "Other Doors: Skin doors with hardwood filling only",
+          "Hardware: Jolly / Dorset (or Equivalent)"
         ]
       }
     ],
@@ -138,6 +178,7 @@ export const projects: Project[] = [
         "/terra-elegance/floor-plans/171-177-typical-stilt-floor.jpg"
       ],
       masterPlan: "/terra-elegance/location-map.png",
+      surroundingMap: "/terra-elegance/surrounding-map.jpg",
       constructionUpdates: [
         "[[Construction Update: Q1 2026 - Structure Slab Complete]]",
         "[[Construction Update: Q2 2026 - Brickwork and Plastering Ongoing]]"
@@ -153,7 +194,7 @@ export const projects: Project[] = [
     name: "Terra Elegance Phase II",
     type: "",
     status: "Launch Soon",
-    location: "Sector -7, precore city,sohna (South Gurugram)",
+    location: "Precore city, sector-7,Sohna (Gurugram).",
     rera: "",
     shortDescription: "",
     description: "",

@@ -7,8 +7,8 @@ export function TrustBar() {
     "RERA APPROVED",
     "TIMELY DELIVERY",
     "ARAVALLI VIEWS",
-    "PREMIUM PLOTS",
-    "BOUTIQUE LIVING",
+    "PREMIUM FLOOR",
+    "LUXURY LIVING",
   ];
 
   // Repeat items to fill scroll track

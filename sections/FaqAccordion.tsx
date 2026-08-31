@@ -24,7 +24,7 @@ export function FaqAccordion() {
       <div className="bg-blob top-1/4 left-1/4" />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
-        
+
         {/* Title Block */}
         <div className="flex flex-col items-center text-center space-y-3 mb-12">
           <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">
@@ -45,11 +45,10 @@ export function FaqAccordion() {
                 setActiveCategory(cat);
                 setOpenId(null);
               }}
-              className={`px-4 py-2 text-[10px] font-sans uppercase tracking-widest border transition-all duration-300 ${
-                activeCategory === cat
+              className={`px-4 py-2 text-[10px] font-sans uppercase tracking-widest border transition-all duration-300 ${activeCategory === cat
                   ? "bg-gold text-dark-bg border-gold font-bold"
                   : "bg-transparent text-warm-white border-gold-border/20 hover:border-gold/50"
-              }`}
+                }`}
             >
               {cat}
             </button>
@@ -71,17 +70,15 @@ export function FaqAccordion() {
                       {item.question}
                     </span>
                     <ChevronDown
-                      className={`w-4 h-4 text-gold transition-transform duration-500 shrink-0 ml-4 ${
-                        isOpen ? "rotate-180" : ""
-                      }`}
+                      className={`w-4 h-4 text-gold transition-transform duration-500 shrink-0 ml-4 ${isOpen ? "rotate-180" : ""
+                        }`}
                     />
                   </button>
-                  
+
                   {/* Dynamic Height Expand */}
                   <div
-                    className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                      isOpen ? "max-h-[200px] border-t border-gold-border/10" : "max-h-0"
-                    }`}
+                    className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isOpen ? "max-h-[200px] border-t border-gold-border/10" : "max-h-0"
+                      }`}
                   >
                     <div className="p-5 text-xs md:text-sm text-warm-muted leading-relaxed font-sans font-light">
                       {item.answer}

@@ -26,7 +26,7 @@ export function TimelineSection() {
       description: "In 2024, Terra Infracon achieved another significant milestone with the licensing of Terra Elegance, our first project within Precore City. The project was planned as a 3BHK independent-floor development with stilt parking, designed to offer comfortable and modern living.",
     },
     {
-      year: "2026—Commitment to Delivery",
+      year: "2026-27 —Commitment to Delivery",
       title: "Turning Promises into Possession",
       description: "In 2026, our focus is on delivering Terra Elegance to our valued customers with a strong commitment to quality, timely execution, and customer satisfaction. We continue to build not just homes, but lasting trust with every project we undertake.",
     },

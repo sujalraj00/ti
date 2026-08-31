@@ -9,8 +9,8 @@ export const faqItems: FAQItem[] = [
   },
   {
     id: "faq2",
-    question: "What is the expected possession timeline for Terra Elegance?",
-    answer: "The project is currently under construction. Infrastructure development is progressing rapidly. The estimated delivery date is [[Possession Date - December 2026]]. Progress updates are shared quarterly.",
+    question: "Where the terra infracon project are located ?",
+    answer: "The project enjoys convenient to Sohna City ,Sohna -Gurugram road , while also being close to everyday essentials such as markets, schools, hospitals, banks and other facilities.",
     category: "Project",
   },
   {
@@ -28,13 +28,13 @@ export const faqItems: FAQItem[] = [
   {
     id: "faq5",
     question: "Is there home loan assistance available?",
-    answer: "Yes, Terra Infracon works in partnership with leading national bank (HDFC Bank) to offer seamless home loan approvals and competitive interest rates for our buyers.",
+    answer: "Yes, Terra Infracon works in partnership with leading with the schedule bank HDFC bank to offer seamless home loan approvals and competitive interest rates for our buyers.",
     category: "Payment",
   },
   {
     id: "faq6",
     question: "Can I customize the interior layout of my floor?",
-    answer: "Basic layout alterations (such as kitchen configurations or wooden flooring preferences) can be customized if requested during the early stages of brickwork. Please contact our architecture consultant after booking.",
+    answer: "Basic layout alterations (such as kitchen configurations or wooden flooring preferences) can be customized if requested during the early stages of brickwork. Please get in touch with our site/sales team after booking.",
     category: "General",
   }
 ];
