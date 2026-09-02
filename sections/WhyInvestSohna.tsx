@@ -19,7 +19,7 @@ export function WhyInvestSohna() {
     {
       icon: Layers,
       title: "The Eco-Luxury Sweet Spot",
-      description: "Nestled directly against the Aravalli forest reserves, Sohna offers a unique biosphere with up to 3x lower pollution indices compared to central Gurgaon.",
+      description: "Nestled directly against the Aravalli forest reserves, Sohna offers a unique biosphere with up to 3x lower pollution indices compared to central Gurugram.",
     },
     {
       icon: Award,
@@ -57,7 +57,7 @@ export function WhyInvestSohna() {
             <div className="flex flex-col space-y-3.5 font-sans text-xs pt-2">
               <div className="flex items-center space-x-3 text-warm-white">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-                <span className="font-light">30 Mins to Gurgaon Golf Course Extension</span>
+                <span className="font-light">30 Mins to Gurugram Golf Course Extension</span>
               </div>
               <div className="flex items-center space-x-3 text-warm-white">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold" />

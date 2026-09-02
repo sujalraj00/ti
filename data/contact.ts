@@ -11,7 +11,7 @@ export const quickContacts = {
   generalEmail: "info@terrainfracon.com",
   whatsappNumber: "+91 9667700930",
   whatsappWelcomeMessage: "Hello, I am interested in Terra Elegance independent floors. Please share the pricing and brochure details.",
-  corporateOffice: "607, 6th Floor, Universal Trade Tower, Sector-49, Sohna Road, Gurgaon, Haryana",
+  corporateOffice: "607, 6th Floor, Universal Trade Tower, Sector-49, Sohna Road, Gurugram, Haryana",
   siteOffice: "Sector-7, Sohna, Precore City, Haryana",
   timing: "9:00 AM – 6:00 PM (Monday – Saturday)",
 };

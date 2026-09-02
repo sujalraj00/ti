@@ -34,7 +34,7 @@ export default function AboutPage() {
 
       {/* Hero Header */}
       <section className="relative py-24 md:py-32 flex items-center justify-center border-b border-gold-border/10">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center opacity-[0.03] mix-blend-luminosity"
           style={{ backgroundImage: `url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80')` }}
         />
@@ -55,7 +55,7 @@ export default function AboutPage() {
       <section className="py-20 md:py-28 relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
+
             {/* Story Text */}
             <div className="lg:col-span-6 flex flex-col space-y-6">
               <div className="flex flex-col space-y-2">
@@ -70,7 +70,7 @@ export default function AboutPage() {
                 <p>{companyDetails.aboutStory}</p>
                 <p>{companyDetails.aboutPhilosophy}</p>
                 <p>
-                  Today, Terra Infracon Pvt. Ltd. represents a mark of quality and premium craftsmanship. Our developments in Gurgaon and Sohna are landmarks of architecture, designed to stand the test of time while preserving the natural ecology.
+                  Today, Terra Infracon Pvt. Ltd. represents a mark of quality and premium craftsmanship. Our developments in Gurugram and Sohna are landmarks of architecture, designed to stand the test of time while preserving the natural ecology.
                 </p>
               </div>
             </div>
@@ -125,7 +125,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="font-serif text-xl font-bold text-warm-white">Our Vision</h3>
                 <p className="text-xs md:text-sm text-warm-muted leading-relaxed font-sans font-light">
-                  To become the premier brand for high-end boutique independent floors in the Gurgaon-Sohna growth corridor, recognized for architectural design, HARERA compliance, and customer satisfaction.
+                  To become the premier brand for high-end boutique independent floors in the Gurugram-Sohna growth corridor, recognized for architectural design, HARERA compliance, and customer satisfaction.
                 </p>
               </Card>
             </FadeIn>
@@ -136,7 +136,7 @@ export default function AboutPage() {
       {/* Values Grid */}
       <section className="py-20 bg-dark-bg">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          
+
           <div className="flex flex-col items-center text-center space-y-3 mb-16">
             <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">
               Core Pillars
@@ -171,7 +171,7 @@ export default function AboutPage() {
       {/* Leadership Placeholders */}
       <section className="py-20 bg-dark-surface border-t border-gold-border/10 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-          
+
           <div className="flex flex-col items-center text-center space-y-3 mb-16">
             <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">
               Our Leadership
@@ -220,7 +220,7 @@ export default function AboutPage() {
       {/* Achievements & Credentials */}
       <section className="py-20 bg-dark-bg border-t border-gold-border/10 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-          
+
           <div className="flex flex-col items-center text-center space-y-3 mb-16">
             <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">
               Credentials

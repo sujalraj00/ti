@@ -24,7 +24,7 @@ export async function generateMetadata({
       post.category,
       "Terra Infracon blog",
       "Sohna independent floors",
-      "Gurgaon property growth",
+      "Gurugram property growth",
     ],
   };
 }

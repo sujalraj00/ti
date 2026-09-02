@@ -42,10 +42,10 @@ export default function PrivacyPolicy() {
           <li>Understand and analyze how visitors navigate through our project catalogs and floorplans.</li>
           <li>Develop new projects, services, features, and layout plans.</li>
           <li>Communicate with you directly for customer support, project brochures delivery, and sales updates.</li>
-          <li>Prevent fraudulent activities and maintain compliance with HARERA Gurgaon protocols.</li>
+          <li>Prevent fraudulent activities and maintain compliance with HARERA Gurugram protocols.</li>
         </ul>
 
-        <h3 className="font-serif text-base md:text-lg font-bold text-warm-white pt-4">3. HARERA Gurgaon & Statutory Compliance</h3>
+        <h3 className="font-serif text-base md:text-lg font-bold text-warm-white pt-4">3. HARERA Gurugram & Statutory Compliance</h3>
         <p>
           All collected customer data is stored securely and used in strict compliance with the Real Estate (Regulation and Development) Act, 2016 (RERA) rules. We do not share or trade customer information with third-party advertising networks. Information is only shared with partner financial institutions (such as SBI, HDFC, ICICI, etc.) upon your direct request for home loan approvals.
         </p>

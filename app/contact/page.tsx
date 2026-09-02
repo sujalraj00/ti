@@ -91,7 +91,7 @@ function ContactFormContent() {
 
       {/* Page Header */}
       <section className="relative py-20 md:py-24 border-b border-gold-border/10">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center opacity-[0.03] mix-blend-luminosity"
           style={{ backgroundImage: `url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80')` }}
         />
@@ -111,7 +111,7 @@ function ContactFormContent() {
       {/* Main Section */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 pt-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
+
           {/* Left Column (5/12): Quick Contact Info & Address */}
           <div className="lg:col-span-5 flex flex-col space-y-8">
             <div className="space-y-4">
@@ -123,7 +123,7 @@ function ContactFormContent() {
 
             {/* Contacts Cards */}
             <div className="flex flex-col space-y-5">
-              
+
               {/* Card 1: Corporate Office */}
               <div className="p-6 border border-gold-border/20 bg-dark-surface/40 backdrop-blur-md flex items-start space-x-4">
                 <MapPin className="w-5 h-5 text-gold shrink-0 mt-1" />
@@ -155,10 +155,10 @@ function ContactFormContent() {
                   </div>
                   <div className="flex items-center space-x-3 text-warm-white">
                     <MessageSquare className="w-4 h-4 text-gold" />
-                    <a 
+                    <a
                       href={`https://wa.me/${quickContacts.whatsappNumber.replace(/\+/g, "").replace(/\s/g, "")}?text=${encodeURIComponent(quickContacts.whatsappWelcomeMessage)}`}
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="hover:text-gold transition-colors font-bold"
                     >
                       {quickContacts.whatsappNumber} (Instant WhatsApp Help)
@@ -179,7 +179,7 @@ function ContactFormContent() {
           {/* Right Column (7/12): Enquiry Form Card */}
           <div className="lg:col-span-7">
             <Card className="p-8 md:p-10 border border-gold-border/30 bg-dark-surface/60 backdrop-blur-md">
-              
+
               <div className="space-y-2 mb-8 text-left">
                 <h3 className="font-serif text-2xl font-bold text-warm-white">Submit Enquiry Registry</h3>
                 <p className="text-xs text-warm-muted font-sans font-light">
@@ -189,7 +189,7 @@ function ContactFormContent() {
 
               {/* Form container */}
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                
+
                 {/* Submit Feedback Notification Banner */}
                 {submitMessage && (
                   <div className="p-4 border border-gold/30 bg-gold/5 flex items-start space-x-3 text-left">
@@ -300,7 +300,7 @@ function ContactFormContent() {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Terra Infracon Gurgaon Headquarters Map"
+          title="Terra Infracon Gurugram Headquarters Map"
         />
       </section>
     </div>

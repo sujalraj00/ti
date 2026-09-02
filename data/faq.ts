@@ -4,7 +4,7 @@ export const faqItems: FAQItem[] = [
   {
     id: "faq1",
     question: "Is the project RERA approved?",
-    answer: "Yes, our flagship project Terra Elegance is fully registered with HARERA Gurgaon. The registration number is RC/REP/HARERA/GGM/854/2024/81. All documentation is available for client inspection at our sales office.",
+    answer: "Yes, our flagship project Terra Elegance is fully registered with HARERA Gurugram. The registration number is RC/REP/HARERA/GGM/854/2024/81. All documentation is available for client inspection at our sales office.",
     category: "RERA",
   },
   {

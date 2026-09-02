@@ -67,7 +67,7 @@ export default function Home() {
       <section className="py-20 md:py-28 bg-dark-bg border-t border-gold-border/10 relative overflow-hidden">
         <div className="bg-blob top-1/3 right-1/4" />
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-          
+
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16">
             <div className="flex flex-col space-y-2">
               <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">
@@ -100,7 +100,7 @@ export default function Home() {
                   <SampleStar />
                   {/* Subtle dark-gold gradient cover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/90 via-dark-bg/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
-                  
+
                   {/* Text Overlay on Hover */}
                   <div className="absolute bottom-0 left-0 right-0 p-5 flex flex-col justify-end translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
                     <span className="text-[9px] uppercase tracking-widest text-gold font-bold">
@@ -189,7 +189,7 @@ export default function Home() {
         <div className="bg-blob top-1/4 left-1/4" />
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
+
             {/* Left Side: Contact Prompts */}
             <div className="flex flex-col space-y-6 items-start">
               <div className="flex flex-col space-y-2">
@@ -203,7 +203,7 @@ export default function Home() {
               <p className="text-xs md:text-sm text-warm-muted leading-relaxed font-sans font-light">
                 Reach out to our executive real estate advisory team. Whether you need site maps, project pricing spreadsheets, or RERA certificates, we are here to support your investment journey.
               </p>
-              
+
               <div className="flex flex-col space-y-4 pt-2 font-sans text-xs md:text-sm text-warm-white">
                 <div className="flex items-center space-x-3.5">
                   <div className="p-2.5 border border-gold-border/20 text-gold bg-dark-bg">
@@ -217,10 +217,10 @@ export default function Home() {
                   <div className="p-2.5 border border-gold-border/20 text-gold bg-dark-bg">
                     <MessageSquare className="w-4 h-4" />
                   </div>
-                  <a 
+                  <a
                     href={`https://wa.me/${companyDetails.whatsapp.replace(/\+/g, "").replace(/\s/g, "")}`}
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="hover:text-gold transition-colors font-bold"
                   >
                     {companyDetails.whatsapp} (WhatsApp Support)
@@ -271,7 +271,7 @@ export default function Home() {
           <Map className="w-4 h-4 text-gold" />
           <div>
             <p className="font-bold text-warm-white">Corporate Office</p>
-            <p className="text-warm-muted">{companyDetails.address.building}, Sector-49, Gurgaon</p>
+            <p className="text-warm-muted">{companyDetails.address.building}, Sector-49, Gurugram</p>
           </div>
         </div>
       </section>

@@ -23,14 +23,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Terra Infracon | Premium Luxury Floors Near Gurgaon & Sohna",
+  title: "Terra Infracon | Premium Luxury Floors Near Gurugram & Sohna",
   description: "Terra Infracon Pvt. Ltd. crafts premium, sustainable, and customer-centric luxury residential floors in Sohna and Gurugram. Discover our flagship project, Terra Elegance.",
   metadataBase: new URL("https://terrainfracon.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Terra Infracon | Premium Luxury Floors Near Gurgaon & Sohna",
+    title: "Terra Infracon | Premium Luxury Floors Near Gurugram & Sohna",
     description: "Terra Infracon Pvt. Ltd. crafts premium, sustainable, and customer-centric luxury residential floors in Sohna and Gurugram. Discover our flagship project, Terra Elegance.",
     url: "https://terrainfracon.com",
     siteName: "Terra Infracon",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Terra Infracon | Premium Luxury Floors Near Gurgaon & Sohna",
+    title: "Terra Infracon | Premium Luxury Floors Near Gurugram & Sohna",
     description: "Terra Infracon Pvt. Ltd. crafts premium, sustainable, and customer-centric luxury residential floors in Sohna and Gurugram.",
   },
 };

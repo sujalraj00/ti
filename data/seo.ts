@@ -2,19 +2,19 @@ import { SEORegistry } from "../types";
 
 export const seoConfig: SEORegistry = {
   home: {
-    title: "Terra Infracon | Premium Luxury Floors Near Gurgaon & Sohna",
-    description: "Terra Infracon Pvt. Ltd. builds A-grade luxury independent residential floors near Gurgaon & Sohna. Explore RERA-approved boutique living at the foot of Aravallis.",
-    keywords: ["Terra Infracon", "Terra Elegance Sohna", "Independent Floors Gurgaon", "Luxury Floors Sohna", "Premium floors near Gurgaon", "HARERA Gurgaon floors", "New Launch Sohna", "Real estate developers Gurgaon"],
+    title: "Terra Infracon | Premium Luxury Floors Near Gurugram & Sohna",
+    description: "Terra Infracon Pvt. Ltd. builds A-grade luxury independent residential floors near Gurugram & Sohna. Explore RERA-approved boutique living at the foot of Aravallis.",
+    keywords: ["Terra Infracon", "Terra Elegance Sohna", "Independent Floors Gurugram", "Luxury Floors Sohna", "Premium floors near Gurugram", "HARERA Gurugram floors", "New Launch Sohna", "Real estate developers Gurugram"],
   },
   about: {
     title: "About Us | Terra Infracon - Crafting Luxury Homes Since 2014",
-    description: "Learn about the legacy of Terra Infracon Pvt. Ltd., our core corporate values, 12+ years experience, and commitment to sustainable construction in Gurgaon.",
+    description: "Learn about the legacy of Terra Infracon Pvt. Ltd., our core corporate values, 12+ years experience, and commitment to sustainable construction in Gurugram.",
     keywords: ["About Terra Infracon", "Real estate builders Sohna", "Terra Infracon experience", "Sustainable construction India", "Gurugram floor developers"],
   },
   projects: {
-    title: "Luxury Real Estate Projects in Sohna & Gurgaon | Terra Infracon",
+    title: "Luxury Real Estate Projects in Sohna & Gurugram | Terra Infracon",
     description: "Browse premium residential floors, gated high-rises, and botanical plots in Sector-7 Sohna. Find under-construction properties starting from ₹1.25 Cr.",
-    keywords: ["Sohna residential projects", "Low rise floors Gurgaon", "Gated floors Sohna", "Under construction floors Sohna", "Terra Infracon properties"],
+    keywords: ["Sohna residential projects", "Low rise floors Gurugram", "Gated floors Sohna", "Under construction floors Sohna", "Terra Infracon properties"],
   },
   gallery: {
     title: "Architectural Gallery | Terra Elegance & Terra Projects",
@@ -24,17 +24,17 @@ export const seoConfig: SEORegistry = {
   testimonials: {
     title: "Customer Testimonials & Reviews | Terra Infracon Homeowners",
     description: "Read verified reviews and experience stories from happy homeowners at Terra Elegance floors. Find out why families trust our construction quality.",
-    keywords: ["Terra Infracon reviews", "Terra Elegance testimonials", "Real estate reviews Sohna", "Gurgaon builder feedback"],
+    keywords: ["Terra Infracon reviews", "Terra Elegance testimonials", "Real estate reviews Sohna", "Gurugram builder feedback"],
   },
   blog: {
     title: "Real Estate & Living Insights | Terra Infracon Blog",
     description: "Read expert articles on independent floors, infrastructure developments in Sohna & South Gurugram, healthy living spaces, and homebuyer guides.",
-    keywords: ["Sohna real estate blog", "Independent floors guide", "South Gurugram property growth", "Low rise communities Gurgaon", "Terra Infracon articles"],
+    keywords: ["Sohna real estate blog", "Independent floors guide", "South Gurugram property growth", "Low rise communities Gurugram", "Terra Infracon articles"],
   },
   contact: {
     title: "Contact Us | Schedule Site Visit - Terra Infracon Gurugram",
     description: "Get in touch with the sales team of Terra Infracon. Visit our corporate office at Sector-49 Sohna Road, or request details for Terra Elegance.",
-    keywords: ["Terra Infracon office", "Terra Elegance sales contact", "Book site visit Sohna", "Gurgaon builders address"],
+    keywords: ["Terra Infracon office", "Terra Elegance sales contact", "Book site visit Sohna", "Gurugram builders address"],
   },
   legal: {
     title: "Privacy Policy & Terms of Use | Terra Infracon Pvt. Ltd.",

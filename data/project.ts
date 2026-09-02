@@ -9,7 +9,7 @@ export const projects: Project[] = [
     location: "Precore City, Sector-7, Sohna, Gurugram",
     rera: "RC/REP/HARERA/GGM/854/2024/81",
     shortDescription: "Luxury low-rise independent residential floors at the foot of the scenic Aravallis, offering comfort, privacy, and modern features.",
-    description: "Terra Elegance is a symbol of modern architecture, prime location, and lifestyle convenience. Designed as high-end independent residential floors, it offers spacious layouts, lush green surroundings, and custom amenities that cater to both comfort and class. Nestled near the scenic Aravalli hills, these floors provide a serene living experience while remaining seamlessly connected to the business centers of Gurgaon.",
+    description: "Terra Elegance is a symbol of modern architecture, prime location, and lifestyle convenience. Designed as high-end independent residential floors, it offers spacious layouts, lush green surroundings, and custom amenities that cater to both comfort and class. Nestled near the scenic Aravalli hills, these floors provide a serene living experience while remaining seamlessly connected to the business centers of Gurugram.",
     startingPrice: "",
     configurations: "[[Configurations - 3 BHK]]",
     unitSizes: "",
@@ -36,7 +36,7 @@ export const projects: Project[] = [
           "Sohna Elevated Highway - 5 mins drive",
           "Delhi-Mumbai Expressway - 10 mins drive",
           "KMP Expressway (Kundli-Manesar-Palwal) - 12 mins drive",
-          "Rajiv Chowk (NH-48), Gurgaon - 18 mins drive",
+          "Rajiv Chowk (NH-48), Gurugram - 18 mins drive",
           "IGI Airport Terminals - 35 mins drive"
         ]
       },
@@ -55,7 +55,7 @@ export const projects: Project[] = [
           "Vardhaan Hospital - 6 mins drive",
           "Sanjeevani Hospital Sohna - 8 mins drive",
           "Medanta - The Medicity, Sector-38 - 22 mins drive",
-          "Artemis Hospital, Gurgaon - 25 mins drive"
+          "Artemis Hospital, Gurugram - 25 mins drive"
         ]
       },
       {

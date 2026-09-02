@@ -2,7 +2,7 @@ import { CompanyDetails } from "../types";
 
 export const companyDetails: CompanyDetails = {
   name: "Terra Infracon Pvt. Ltd.",
-  tagline: "Premium Floors Near Gurgaon",
+  tagline: "Premium Floors Near Gurugram",
   subTagline: "Luxury Floors in Sohna",
   description: "Terra Infracon Pvt. Ltd. is a trusted name in real estate, committed to creating modern, sustainable, and customer-centric living spaces. We combine innovative architecture with premium quality at strategic locations.",
   aboutStory: "Founded in 2014, Terra Infracon Pvt. Ltd. has emerged as a premier real estate developer committed to redefining urban living. We focus on boutique independent residential floors that offer privacy, premium styling, and modern convenience at key locations around Sohna and Gurugram.",
