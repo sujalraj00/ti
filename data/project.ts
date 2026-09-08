@@ -24,8 +24,8 @@ export const projects: Project[] = [
     highlights: [
       { label: "Plot Sizes", value: "[[Plot Sizes 146 Sq.Yds]]" },
       { label: "Stilt Parking", value: "Dedicated Parking Slots" },
-      { label: "Terrace Allocation", value: "Private Demarcated Rooftop Areas (Terrace access only for 3 floor unit)" },
-      { label: "Security Level", value: "3-Tier Gated Security System" },
+      { label: "Terrace Allocation", value: "Private Demarcated Rooftop Areas (Terrace access exclusively for residents of the third-floor unit)" },
+      { label: "Security Level", value: "24*7 security with monitoring of Entry and Exist." },
       { label: "Ventilation", value: "3-Side Open Spacious Layouts" },
       { label: "RERA Reg Number", value: "RC/REP/HARERA/GGM/854/2024/81" }
     ],
@@ -94,7 +94,7 @@ export const projects: Project[] = [
           "Floors: Matt-satin finish vitrified tile / anti skid ceramic tile",
           "Ceiling: Oil bound distemper paint",
           "Counter: Granite Stone",
-          "Cabinet: Modular kitchen - below counter and overhead storage in plyboard (BWR, ISI mark) with SS basket and profile handles, shutters 18mm finished in laminate, SS single drain board sink. Center drawers in Innotech.",
+          "Cabinet: Modular kitchen with chimney and hob below the counter and overhead storage in plyboard (BWR, ISI mark) with SS basket and profile handles, shutters 18mm finished in laminate, SS single drain board sink. Center drawers in Innotech.",
           "CP Fitting: ISI mark, mixer"
         ]
       },

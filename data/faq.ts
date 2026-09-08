@@ -34,7 +34,7 @@ export const faqItems: FAQItem[] = [
   {
     id: "faq6",
     question: "Can I customize the interior layout of my floor?",
-    answer: "Basic layout alterations (such as kitchen configurations or wooden flooring preferences) can be customized if requested during the early stages of brickwork. Please get in touch with our site/sales team after booking.",
+    answer: "Basic layout alterations (such as kitchen configurations or wooden flooring preferences) can be customized if requested during the early stages of brickwork. Please get in touch with our site/sales team after booking, Subject to terms and conditions.",
     category: "General",
   }
 ];

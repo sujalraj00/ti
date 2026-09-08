@@ -198,7 +198,7 @@ export function Hero() {
             variants={itemVariants}
             className="text-sm md:text-base text-warm-muted leading-relaxed font-sans max-w-xl font-light text-balance"
           >
-            Luxury residential development approximately of the scenic Aravali — designed exclusively
+            Luxury residential development in close proximity to the scenic Aravalli- designed exclusively
             for those who refuse to compromise on quality and
             space.
           </motion.p>

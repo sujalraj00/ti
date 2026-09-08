@@ -189,10 +189,10 @@ export default function AboutPage() {
                 <div className="w-32 h-32 bg-dark-surface border border-gold-border/20 relative flex items-center justify-center text-center shrink-0">
                 </div>
                 <div className="flex flex-col items-center sm:items-start text-center sm:text-left space-y-1">
-                  <h3 className="font-serif text-lg font-bold text-warm-white">Chairman & Managing Director</h3>
-                  <p className="text-[10px] uppercase tracking-widest text-gold font-bold">Co-Founder, Terra Infracon</p>
+                  <h3 className="font-serif text-lg font-bold text-warm-white">VIJAY SANDUJA</h3>
+                  <p className="text-[10px] uppercase tracking-widest text-gold font-bold"> Co-Founder & Director ,TERRA INFRACON</p>
                   <p className="text-xs text-warm-muted leading-relaxed font-sans font-light pt-2">
-                    Envisioning corporate policies, strategic growth acquisitions, and financial planning across commercial structures.
+                    Responsible for strategic planning, business development, project management, and overall organisational growth.
                   </p>
                 </div>
               </div>
@@ -204,10 +204,10 @@ export default function AboutPage() {
                 <div className="w-32 h-32 bg-dark-surface border border-gold-border/20 relative flex items-center justify-center text-center shrink-0">
                 </div>
                 <div className="flex flex-col items-center sm:items-start text-center sm:text-left space-y-1">
-                  <h3 className="font-serif text-lg font-bold text-warm-white">Executive Director - Operations</h3>
-                  <p className="text-[10px] uppercase tracking-widest text-gold font-bold">Head of Engineering & Site QA</p>
+                  <h3 className="font-serif text-lg font-bold text-warm-white">DISHANT SANDUJA</h3>
+                  <p className="text-[10px] uppercase tracking-widest text-gold font-bold">Co-Founder & Director, TERRA INFRACON</p>
                   <p className="text-xs text-warm-muted leading-relaxed font-sans font-light pt-2">
-                    Supervising structure construction quality, site managers, procurement of certified materials, and delivery timelines.
+                    Supervising structural construction quality, actively involved in operations, project execution, customer relations, sales, and the day-to-day management of the organisation.
                   </p>
                 </div>
               </div>
@@ -218,7 +218,7 @@ export default function AboutPage() {
       </section>
 
       {/* Achievements & Credentials */}
-      <section className="py-20 bg-dark-bg border-t border-gold-border/10 relative overflow-hidden">
+      {/* <section className="py-20 bg-dark-bg border-t border-gold-border/10 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
 
           <div className="flex flex-col items-center text-center space-y-3 mb-16">
@@ -233,30 +233,30 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {/* Cert 1 */}
-            <Card className="flex flex-col items-center text-center space-y-3 p-6">
+      {/* <Card className="flex flex-col items-center text-center space-y-3 p-6">
               <Trophy className="w-8 h-8 text-gold" />
               <h4 className="font-serif text-base font-bold text-warm-white">[[ Quality Assurance Certificate ]]</h4>
               <p className="text-[10px] text-warm-muted uppercase tracking-widest">ISO 9001:2015 Registered</p>
-            </Card>
+            </Card> */}
 
-            {/* Cert 2 */}
-            <Card className="flex flex-col items-center text-center space-y-3 p-6">
+      {/* Cert 2 */}
+      {/* <Card className="flex flex-col items-center text-center space-y-3 p-6">
               <Trophy className="w-8 h-8 text-gold" />
               <h4 className="font-serif text-base font-bold text-warm-white">[[ Eco Construction Honor ]]</h4>
               <p className="text-[10px] text-warm-muted uppercase tracking-widest">IGBC Green Building Member</p>
-            </Card>
+            </Card> */}
 
-            {/* Cert 3 */}
-            <Card className="flex flex-col items-center text-center space-y-3 p-6">
+      {/* Cert 3 */}
+      {/* <Card className="flex flex-col items-center text-center space-y-3 p-6">
               <Trophy className="w-8 h-8 text-gold" />
               <h4 className="font-serif text-base font-bold text-warm-white">[[ HARERA Trusted Developer ]]</h4>
               <p className="text-[10px] text-warm-muted uppercase tracking-widest">Registered HARERA Partner</p>
             </Card>
-          </div>
-
-        </div>
-      </section>
+          </div> */}
 
     </div>
+    //  </section> */}
+
+    // </div>
   );
 }

@@ -26,8 +26,8 @@ export const footerLinks = {
     { label: "Blogs & Insights", href: "/blog" },
   ],
   projects: [
-    { label: "Terra Elegance (Sohna)", href: "/projects/terra-elegance" },
-    { label: "Terra Heights (Sohna)", href: "/projects/terra-heights" },
+    { label: "Terra Elegance (Ongoing Floors)", href: "/projects/terra-elegance" },
+    { label: "Terra Elegance (Phase II)", href: "/projects/terra-elegance-phase-ii" },
     // { label: "Terra Oasis (Sohna)", href: "/projects/terra-oasis" },
     { label: "All Projects", href: "/projects" },
   ],
