@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import CustomCursor from "@/components/CustomCursor";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
+import FloatingEnquireButton from "@/components/FloatingEnquireButton";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -75,6 +76,7 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-grow pt-[76px] lg:pt-[88px]">{children}</main>
           <Footer />
+          <FloatingEnquireButton />
         </SmoothScrollProvider>
       </body>
     </html>

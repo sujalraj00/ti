@@ -44,15 +44,19 @@ export async function POST(request: Request) {
       );
     }
 
-    if (isSmtpConfigured) {
+      const isSiteVisit = validatedData.message?.toLowerCase().includes("site visit");
+      const emailSubject = isSiteVisit
+        ? `[Site Visit Booking] ${validatedData.project} - ${validatedData.name}`
+        : `New Project Enquiry: ${validatedData.project}`;
+
       // Send real email
       await transporter.sendMail({
         from: process.env.SMTP_FROM_EMAIL || "no-reply@terrainfracon.com",
         to: "sales@terrainfracon.com",
-        subject: `New Project Enquiry: ${validatedData.project}`,
+        subject: emailSubject,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #c5a85c; background-color: #0A0A0A; color: #F5F5F0;">
-            <h2 style="color: #c5a85c; border-bottom: 1px solid #c5a85c; padding-bottom: 10px; font-family: serif;">New Project Enquiry Registry</h2>
+            <h2 style="color: #c5a85c; border-bottom: 1px solid #c5a85c; padding-bottom: 10px; font-family: serif;">${isSiteVisit ? "Site Visit Booking Request" : "New Project Enquiry Registry"}</h2>
             <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
               <tr>
                 <td style="padding: 8px 0; font-weight: bold; width: 120px; color: #c5a85c;">Name:</td>
@@ -85,9 +89,6 @@ export async function POST(request: Request) {
           </div>
         `,
       });
-    } else {
-      console.warn("SMTP configurations are missing in environment variables. Form submission logged locally:\n", validatedData);
-    }
 
     return NextResponse.json({
       success: true,

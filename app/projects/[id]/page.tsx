@@ -55,6 +55,12 @@ export default function ProjectDetailsPage({
   const [submitMessage, setSubmitMessage] = useState<string | null>(null);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
+  // Dedicated state for Schedule a Visit & Brochure sidebar form
+  const [sidebarMode, setSidebarMode] = useState<"visit" | "brochure">("visit");
+  const [isSidebarSubmitting, setIsSidebarSubmitting] = useState(false);
+  const [sidebarSuccess, setSidebarSuccess] = useState<string | null>(null);
+  const [sidebarError, setSidebarError] = useState<string | null>(null);
+
   useEffect(() => {
     setFloorPlansUnlocked(
       sessionStorage.getItem(FLOOR_PLAN_UNLOCK_KEY) === "true"
@@ -92,6 +98,11 @@ export default function ProjectDetailsPage({
           />
           <SampleStar className="top-4 right-4 md:top-6 md:right-6" />
         </section>
+
+        {/* Sample Disclaimer below banner */}
+        <div className="max-w-7xl mx-auto px-6 md:px-12 pt-3">
+          <SampleDisclaimer />
+        </div>
 
         {/* Contact for More Information */}
         <section className="max-w-2xl mx-auto px-6 md:px-12 pt-16 relative z-10">
@@ -351,6 +362,69 @@ export default function ProjectDetailsPage({
     }
   };
 
+  // Sidebar submission handler for Schedule a Visit & Brochure
+  const handleSidebarSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    setIsSidebarSubmitting(true);
+    setSidebarSuccess(null);
+    setSidebarError(null);
+
+    const formData = new FormData(e.currentTarget);
+    const formElement = e.currentTarget;
+
+    const name = formData.get("name") as string;
+    const phone = formData.get("phone") as string;
+    const email = formData.get("email") as string;
+
+    const isVisit = sidebarMode === "visit";
+    const visitDate = formData.get("date") as string;
+    const visitTime = formData.get("timeSlot") as string;
+    const includeBrochure = formData.get("includeBrochure") === "on";
+
+    const message = isVisit
+      ? `Schedule a Site Visit\nPreferred Date: ${visitDate}\nPreferred Time Slot: ${visitTime}\nAlso Request Brochure & Pricing: ${includeBrochure ? "Yes" : "No"}`
+      : "Brochure & Price Sheet Request";
+
+    const payload = {
+      name,
+      phone,
+      email,
+      project: project.name,
+      message,
+      consent: true,
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setSidebarSuccess(
+          isVisit
+            ? `Thank you, ${name}! Your site visit request for ${visitDate} (${visitTime}) has been registered. Our property advisor will contact you shortly to confirm.`
+            : `Thank you, ${name}! Your brochure request has been registered. Our team will share the latest brochure & price sheet.`
+        );
+        formElement.reset();
+      } else {
+        setSidebarError(
+          result.message || "Failed to submit request. Please try again."
+        );
+      }
+    } catch {
+      setSidebarError("A connection error occurred. Please try again later.");
+    } finally {
+      setIsSidebarSubmitting(false);
+    }
+  };
+
   return (
     <div className="w-full bg-dark-bg relative overflow-hidden pb-16">
       {/* JSON-LD Project Schema */}
@@ -414,6 +488,11 @@ export default function ProjectDetailsPage({
           </div>
         </div>
       </section>
+ 
+      {/* Sample Disclaimer below banner */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-3">
+        <SampleDisclaimer />
+      </div>
 
       {/* ============================================================
           2. DOUBLE-COLUMN OVERVIEW & ENQUIRY
@@ -1012,131 +1091,236 @@ export default function ProjectDetailsPage({
           </div>
 
           {/* ========================================================
-              RIGHT COLUMN — STICKY ENQUIRY SIDEBAR
+              RIGHT COLUMN — STICKY ENQUIRY & SITE VISIT SIDEBAR
           ======================================================== */}
           <div className="lg:col-span-4">
-            <aside className="sticky top-[100px] bg-dark-surface border border-gold-border p-6 md:p-8 space-y-6 shadow-2xl">
-              <div className="space-y-1">
-                <h4 className="font-serif text-xl font-bold text-warm-white">
-                  Get Brochure & Price Sheet
-                </h4>
+            <aside className="sticky top-[100px] bg-dark-surface border border-gold-border p-6 md:p-8 space-y-5 shadow-2xl">
+              {/* Tab Selector: Schedule Visit vs Brochure */}
+              <div className="flex border-b border-gold-border/20">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSidebarMode("visit");
+                    setSidebarSuccess(null);
+                    setSidebarError(null);
+                  }}
+                  className={`flex-1 pb-3 text-xs font-sans uppercase tracking-wider font-bold transition-all flex items-center justify-center space-x-1.5 cursor-pointer ${
+                    sidebarMode === "visit"
+                      ? "text-gold border-b-2 border-gold"
+                      : "text-warm-muted hover:text-warm-white"
+                  }`}
+                >
+                  <Calendar className="w-3.5 h-3.5" />
+                  <span>Schedule Visit</span>
+                </button>
 
-                {/* <p className="text-[10px] uppercase tracking-widest text-gold font-bold">
-                  Project Downloads
-                </p> */}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSidebarMode("brochure");
+                    setSidebarSuccess(null);
+                    setSidebarError(null);
+                  }}
+                  className={`flex-1 pb-3 text-xs font-sans uppercase tracking-wider font-bold transition-all flex items-center justify-center space-x-1.5 cursor-pointer ${
+                    sidebarMode === "brochure"
+                      ? "text-gold border-b-2 border-gold"
+                      : "text-warm-muted hover:text-warm-white"
+                  }`}
+                >
+                  <FileText className="w-3.5 h-3.5" />
+                  <span>Brochure & Pricing</span>
+                </button>
               </div>
 
-              {/* <div className="border-y border-gold-border/10 py-4.5 space-y-3.5 font-sans text-xs text-warm-muted">
-                <div className="flex justify-between">
-                  <span>Brochure Size:</span>
-
-                  <strong className="text-warm-white">
-                    Brochure.PDF - 4.2 MB
-                  </strong>
-                </div>
-
-                <div className="flex justify-between">
-                  <span>Price List:</span>
-
-                  <strong className="text-warm-white">
-                    PriceSheet.PDF - 850 KB
-                  </strong>
-                </div>
-              </div> */}
+              {/* Title & Description */}
+              <div className="space-y-1">
+                <h4 className="font-serif text-xl font-bold text-warm-white">
+                  {sidebarMode === "visit"
+                    ? "Schedule a Site Visit"
+                    : "Get Brochure & Price Sheet"}
+                </h4>
+                <p className="text-xs text-warm-muted font-sans leading-relaxed">
+                  {sidebarMode === "visit"
+                    ? "Book a private guided walkthrough to inspect floor layouts, construction quality, and premium fittings."
+                    : "Request official floor plans, detailed specifications, and the latest payment schedules."}
+                </p>
+              </div>
 
               {/* Form */}
-              <form
-                onSubmit={handleBrochureRequest}
-                className="space-y-4"
-              >
-                <p className="text-xs text-warm-muted font-sans leading-relaxed">
-                  Contact us Or schedule a visit.
+              <form onSubmit={handleSidebarSubmit} className="space-y-3.5">
+                <div className="space-y-3">
+                  <div>
+                    <input
+                      type="text"
+                      id="sidebar-name"
+                      name="name"
+                      required
+                      disabled={isSidebarSubmitting}
+                      placeholder="Your Full Name"
+                      className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-2.5 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors disabled:opacity-50"
+                    />
+                  </div>
 
-                </p>
+                  <div>
+                    <input
+                      type="tel"
+                      id="sidebar-phone"
+                      name="phone"
+                      required
+                      disabled={isSidebarSubmitting}
+                      placeholder="Phone Number (e.g. 9876543210)"
+                      pattern="[0-9+\s-]{10,15}"
+                      title="Please enter a valid 10 to 15 digit phone number"
+                      className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-2.5 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors disabled:opacity-50"
+                    />
+                  </div>
 
-                {/* <div className="space-y-3">
-                  <input
-                    type="text"
-                    id="brochure-name"
-                    name="name"
-                    required
-                    disabled={isSubmitting}
-                    placeholder="Your Name"
-                    suppressHydrationWarning
-                    className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-2.5 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors disabled:opacity-50"
-                  />
+                  <div>
+                    <input
+                      type="email"
+                      id="sidebar-email"
+                      name="email"
+                      required
+                      disabled={isSidebarSubmitting}
+                      placeholder="Email Address"
+                      className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-2.5 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors disabled:opacity-50"
+                    />
+                  </div>
 
-                  <input
-                    type="tel"
-                    id="brochure-phone"
-                    name="phone"
-                    required
-                    disabled={isSubmitting}
-                    placeholder="Phone Number"
-                    suppressHydrationWarning
-                    className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-2.5 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors disabled:opacity-50"
-                  />
+                  {sidebarMode === "visit" && (
+                    <>
+                      <div className="space-y-1">
+                        <label
+                          htmlFor="sidebar-date"
+                          className="block text-[10px] uppercase tracking-wider text-gold font-bold"
+                        >
+                          Preferred Visit Date
+                        </label>
+                        <input
+                          type="date"
+                          id="sidebar-date"
+                          name="date"
+                          required
+                          min={new Date().toISOString().split("T")[0]}
+                          defaultValue={new Date().toISOString().split("T")[0]}
+                          disabled={isSidebarSubmitting}
+                          className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-2.5 text-xs font-sans text-warm-white focus:outline-none focus:border-gold transition-colors disabled:opacity-50 [color-scheme:dark]"
+                        />
+                      </div>
 
-                  <input
-                    type="email"
-                    id="brochure-email"
-                    name="email"
-                    required
-                    disabled={isSubmitting}
-                    placeholder="Email Address"
-                    suppressHydrationWarning
-                    className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-2.5 text-xs font-sans text-warm-white placeholder:text-warm-muted/50 focus:outline-none focus:border-gold transition-colors disabled:opacity-50"
-                  />
-                </div> */}
+                      <div className="space-y-1">
+                        <label
+                          htmlFor="sidebar-time"
+                          className="block text-[10px] uppercase tracking-wider text-gold font-bold"
+                        >
+                          Preferred Time Slot
+                        </label>
+                        <select
+                          id="sidebar-time"
+                          name="timeSlot"
+                          disabled={isSidebarSubmitting}
+                          className="w-full bg-dark-bg border border-gold-border/30 px-3.5 py-2.5 text-xs font-sans text-warm-white focus:outline-none focus:border-gold transition-colors disabled:opacity-50 cursor-pointer"
+                        >
+                          <option value="10:00 AM - 01:00 PM (Morning)">
+                            10:00 AM - 01:00 PM (Morning)
+                          </option>
+                          <option value="01:00 PM - 04:00 PM (Afternoon)">
+                            01:00 PM - 04:00 PM (Afternoon)
+                          </option>
+                          <option value="04:00 PM - 07:00 PM (Evening)">
+                            04:00 PM - 07:00 PM (Evening)
+                          </option>
+                        </select>
+                      </div>
 
-                {submitMessage && (
-                  <p className="text-[11px] text-gold font-sans font-medium bg-gold/10 border border-gold/20 p-2.5">
-                    {submitMessage}
-                  </p>
+                      <label className="flex items-start space-x-2 pt-1 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          name="includeBrochure"
+                          defaultChecked
+                          className="mt-0.5 accent-gold cursor-pointer"
+                        />
+                        <span className="text-[11px] text-warm-muted font-sans select-none">
+                          Also send brochure & price list via WhatsApp
+                        </span>
+                      </label>
+                    </>
+                  )}
+                </div>
+
+                {/* Success Message */}
+                {sidebarSuccess && (
+                  <div className="bg-gold/10 border border-gold/30 p-3.5 space-y-1.5 text-center">
+                    <div className="w-7 h-7 rounded-full bg-gold text-dark-bg flex items-center justify-center mx-auto">
+                      <Check className="w-4 h-4 stroke-[3]" />
+                    </div>
+                    <p className="text-[11px] text-gold font-sans font-medium">
+                      {sidebarSuccess}
+                    </p>
+                  </div>
                 )}
 
-                {submitError && (
+                {/* Error Message */}
+                {sidebarError && (
                   <p className="text-[11px] text-red-500 font-sans font-medium bg-red-950/20 border border-red-900/30 p-2.5">
-                    {submitError}
+                    {sidebarError}
                   </p>
                 )}
 
-                {/* <button
+                <button
                   type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-gold text-dark-bg hover:bg-gold-light py-3 font-sans text-xs uppercase tracking-widest font-bold transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50"
+                  disabled={isSidebarSubmitting}
+                  className="w-full bg-gold text-dark-bg hover:bg-gold-light py-3 font-sans text-xs uppercase tracking-widest font-bold transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 cursor-pointer shadow-md hover:shadow-gold/20"
                 >
-                  <Download className="w-4 h-4" />
-
-                  <span>
-                    {isSubmitting
-                      ? "Submitting..."
-                      : "Download Brochure"}
-                  </span>
-                </button> */}
+                  {sidebarMode === "visit" ? (
+                    <>
+                      <Calendar className="w-4 h-4" />
+                      <span>
+                        {isSidebarSubmitting
+                          ? "Scheduling Visit..."
+                          : "Schedule Site Visit"}
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <Download className="w-4 h-4" />
+                      <span>
+                        {isSidebarSubmitting
+                          ? "Submitting..."
+                          : "Download Brochure & Pricing"}
+                      </span>
+                    </>
+                  )}
+                </button>
               </form>
 
-              {/* Call / WhatsApp */}
-              <div className="grid grid-cols-2 gap-3 pt-2">
-                <a
-                  href={`tel:${companyDetails.phone}`}
-                  className="py-2.5 border border-gold-border/40 hover:border-gold text-center text-xs font-bold text-warm-white uppercase tracking-wider flex items-center justify-center space-x-1.5 transition-colors"
-                >
-                  <Phone className="w-3.5 h-3.5 text-gold" />
-                  <span>Call Us</span>
-                </a>
+              {/* Direct Contact Options */}
+              <div className="pt-2 border-t border-gold-border/15 space-y-2">
+                <p className="text-[10px] uppercase tracking-widest text-center text-warm-muted/70">
+                  Or connect directly
+                </p>
 
-                <a
-                  href={`https://wa.me/${companyDetails.whatsapp
-                    .replace(/\+/g, "")
-                    .replace(/\s/g, "")}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="py-2.5 border border-gold-border/40 hover:border-gold text-center text-xs font-bold text-warm-white uppercase tracking-wider flex items-center justify-center space-x-1.5 transition-colors"
-                >
-                  <MessageSquare className="w-3.5 h-3.5 text-gold" />
-                  <span>WhatsApp</span>
-                </a>
+                <div className="grid grid-cols-2 gap-3">
+                  <a
+                    href={`tel:${companyDetails.phone}`}
+                    className="py-2.5 border border-gold-border/40 hover:border-gold text-center text-xs font-bold text-warm-white uppercase tracking-wider flex items-center justify-center space-x-1.5 transition-colors cursor-pointer"
+                  >
+                    <Phone className="w-3.5 h-3.5 text-gold" />
+                    <span>Call Us</span>
+                  </a>
+
+                  <a
+                    href={`https://wa.me/${companyDetails.whatsapp
+                      .replace(/\+/g, "")
+                      .replace(/\s/g, "")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="py-2.5 border border-gold-border/40 hover:border-gold text-center text-xs font-bold text-warm-white uppercase tracking-wider flex items-center justify-center space-x-1.5 transition-colors cursor-pointer"
+                  >
+                    <MessageSquare className="w-3.5 h-3.5 text-gold" />
+                    <span>WhatsApp</span>
+                  </a>
+                </div>
               </div>
             </aside>
           </div>

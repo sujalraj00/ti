@@ -47,7 +47,7 @@ export const galleryImages: GalleryImage[] = [
     alt: "Terra Elegance Evening View",
     title: "Evening Balcony Perspective",
     description: "Digital design rendering of the premium main elevation under evening lights.",
-    category: "rendering",
+    category: "exterior",
   },
   {
     id: "g7",
@@ -63,7 +63,7 @@ export const galleryImages: GalleryImage[] = [
     alt: "Architectural Frontage",
     title: "Architectural Frontage Rendering",
     description: "Digital elevation rendering showcasing the low-rise stilt parking and four floors format.",
-    category: "rendering",
+    category: "exterior",
   },
   {
     id: "g9",
@@ -103,7 +103,7 @@ export const galleryImages: GalleryImage[] = [
     alt: "Lobby Area Renders",
     title: "Stilt Lobby & Parking",
     description: "Grand entrance lobby with stilt height, high-speed lift, and wide driving lanes.",
-    category: "rendering",
+    category: "exterior",
   },
   {
     id: "g14",
@@ -111,7 +111,7 @@ export const galleryImages: GalleryImage[] = [
     alt: "Lobby Area Renders",
     title: "Stilt Lobby & Parking",
     description: "Grand entrance lobby with stilt height, high-speed lift, and wide driving lanes.",
-    category: "rendering",
+    category: "exterior",
   },
   {
     id: "g15",
@@ -151,7 +151,7 @@ export const galleryImages: GalleryImage[] = [
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
     description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
-    category: "construction",
+    category: "interior",
   },
   {
     id: "g20",
@@ -159,7 +159,7 @@ export const galleryImages: GalleryImage[] = [
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
     description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
-    category: "construction",
+    category: "interior",
   },
   {
     id: "g21",
@@ -167,7 +167,7 @@ export const galleryImages: GalleryImage[] = [
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
     description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
-    category: "construction",
+    category: "interior",
   },
   {
     id: "g22",
@@ -175,7 +175,7 @@ export const galleryImages: GalleryImage[] = [
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
     description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
-    category: "construction",
+    category: "interior",
   },
   {
     id: "g23",
@@ -183,7 +183,7 @@ export const galleryImages: GalleryImage[] = [
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
     description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
-    category: "construction",
+    category: "interior",
   },
   {
     id: "g24",
@@ -191,7 +191,7 @@ export const galleryImages: GalleryImage[] = [
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
     description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
-    category: "construction",
+    category: "interior",
   },
   {
     id: "g25",
@@ -199,7 +199,7 @@ export const galleryImages: GalleryImage[] = [
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
     description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
-    category: "construction",
+    category: "interior",
   },
   {
     id: "g26",
@@ -207,7 +207,7 @@ export const galleryImages: GalleryImage[] = [
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
     description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
-    category: "construction",
+    category: "interior",
   },
   {
     id: "g27",
@@ -215,7 +215,7 @@ export const galleryImages: GalleryImage[] = [
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
     description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
-    category: "construction",
+    category: "interior",
   },
   {
     id: "g28",
@@ -223,7 +223,7 @@ export const galleryImages: GalleryImage[] = [
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
     description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
-    category: "construction",
+    category: "interior",
   },
   {
     id: "g29",
@@ -231,7 +231,7 @@ export const galleryImages: GalleryImage[] = [
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
     description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
-    category: "construction",
+    category: "interior",
   },
   {
     id: "g30",
@@ -239,7 +239,7 @@ export const galleryImages: GalleryImage[] = [
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
     description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
-    category: "construction",
+    category: "interior",
   },
   {
     id: "g31",
@@ -247,6 +247,6 @@ export const galleryImages: GalleryImage[] = [
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
     description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
-    category: "construction",
+    category: "interior",
   }
 ];

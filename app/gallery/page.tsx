@@ -11,7 +11,7 @@ export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const categories = ["all", "interior", "exterior", "construction", "drone", "rendering"];
+  const categories = ["all", "interior", "exterior"];
 
   const filteredImages = galleryImages.filter(
     (img) => activeCategory === "all" || img.category === activeCategory
@@ -44,7 +44,7 @@ export default function GalleryPage() {
 
       {/* Page Header */}
       <section className="relative py-20 md:py-24 border-b border-gold-border/10">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center opacity-[0.03] mix-blend-luminosity"
           style={{ backgroundImage: `url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80')` }}
         />
@@ -72,11 +72,10 @@ export default function GalleryPage() {
                 setActiveCategory(cat);
                 setLightboxIndex(null);
               }}
-              className={`px-4.5 py-2.5 text-[10px] font-sans uppercase tracking-widest border transition-all duration-300 ${
-                activeCategory === cat
-                  ? "bg-gold text-dark-bg border-gold font-bold"
-                  : "bg-transparent text-warm-white border-gold-border/20 hover:border-gold/50"
-              }`}
+              className={`px-4.5 py-2.5 text-[10px] font-sans uppercase tracking-widest border transition-all duration-300 ${activeCategory === cat
+                ? "bg-gold text-dark-bg border-gold font-bold"
+                : "bg-transparent text-warm-white border-gold-border/20 hover:border-gold/50"
+                }`}
             >
               {cat}
             </button>
@@ -89,7 +88,7 @@ export default function GalleryPage() {
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
           {filteredImages.map((img, idx) => (
             <FadeIn key={img.id} delay={idx * 0.05} direction="up" className="break-inside-avoid">
-              <div 
+              <div
                 onClick={() => openLightbox(idx)}
                 className="group relative overflow-hidden border border-gold-border/20 shadow-xl cursor-pointer bg-dark-surface"
               >
@@ -132,12 +131,12 @@ export default function GalleryPage() {
 
       {/* Native Lightbox Overlay */}
       {lightboxIndex !== null && (
-        <div 
+        <div
           onClick={closeLightbox}
           className="fixed inset-0 bg-dark-bg/95 backdrop-blur-md z-[10000] flex items-center justify-center p-6 md:p-12"
         >
           {/* Close trigger */}
-          <button 
+          <button
             onClick={closeLightbox}
             className="absolute top-6 right-6 p-2 bg-dark-surface border border-gold-border text-warm-white hover:text-gold transition-colors z-50 cursor-pointer"
             aria-label="Close Lightbox"
@@ -163,7 +162,7 @@ export default function GalleryPage() {
           </button>
 
           {/* Active Image Box */}
-          <div 
+          <div
             onClick={(e) => e.stopPropagation()}
             className="relative max-w-5xl max-h-[80vh] w-full flex flex-col items-center justify-center space-y-4"
           >
