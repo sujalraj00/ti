@@ -42,6 +42,16 @@ export const metadata: Metadata = {
     title: "Terra Infracon | Premium Luxury Floors Near Gurugram & Sohna",
     description: "Terra Infracon Pvt. Ltd. crafts premium, sustainable, and customer-centric luxury residential floors in Sohna and Gurugram.",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "192x192" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

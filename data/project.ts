@@ -22,7 +22,7 @@ export const projects: Project[] = [
       "Scenic Aravalli Range Views"
     ],
     highlights: [
-      { label: "Plot Sizes", value: "[[Plot Sizes 146 Sq.Yds]]" },
+      { label: "Plot Sizes", value: "[[Plot Sizes 146 Sq.Yds]] ( approximately )" },
       { label: "Stilt Parking", value: "Dedicated Parking Slots" },
       { label: "Terrace Allocation", value: "Private Demarcated Rooftop Areas (Terrace access exclusively for residents of the third-floor unit)" },
       { label: "Security Level", value: "24*7 security with monitoring of Entry and Exist." },
