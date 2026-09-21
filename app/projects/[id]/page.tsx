@@ -20,6 +20,8 @@ import {
   X,
   Lock,
   Eye,
+  Play,
+  ExternalLink,
 } from "lucide-react";
 
 import { projects } from "../../../data/project";
@@ -33,6 +35,27 @@ import {
   FloorPlanUnlockModal,
   FLOOR_PLAN_UNLOCK_KEY,
 } from "../../../components/FloorPlanUnlockModal";
+
+function getEmbedUrl(url: string): string | null {
+  if (!url || url.includes("[[")) return null;
+
+  const shortsMatch = url.match(/youtube\.com\/shorts\/([a-zA-Z0-9_-]+)/);
+  if (shortsMatch) {
+    return `https://www.youtube.com/embed/${shortsMatch[1]}`;
+  }
+
+  const watchMatch = url.match(/youtube\.com\/watch\?v=([a-zA-Z0-9_-]+)/);
+  if (watchMatch) {
+    return `https://www.youtube.com/embed/${watchMatch[1]}`;
+  }
+
+  const shareMatch = url.match(/youtu\.be\/([a-zA-Z0-9_-]+)/);
+  if (shareMatch) {
+    return `https://www.youtube.com/embed/${shareMatch[1]}`;
+  }
+
+  return null;
+}
 
 export default function ProjectDetailsPage({
   params,
@@ -755,6 +778,138 @@ export default function ProjectDetailsPage({
                   )}
               </div>
             )}
+
+            {/* ======================================================
+                PROJECT VIDEO TOUR / WALKTHROUGH
+            ====================================================== */}
+            {project.videoUrl && !project.videoUrl.includes("[[") && (() => {
+              const embedUrl = getEmbedUrl(project.videoUrl);
+              const isShort = project.videoUrl.includes("/shorts/");
+              return (
+                <div className="border-t border-gold-border/25 pt-10 space-y-6">
+                  <div className="space-y-2">
+                    <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">
+                      Virtual Experience
+                    </span>
+                    <h3 className="font-serif text-2xl font-bold text-warm-white">
+                      Project Video Tour
+                    </h3>
+                    <p className="text-xs text-warm-muted font-sans font-light">
+                      Take an authentic walkthrough tour of {project.name} floors in Sector-7 Sohna, South Gurugram.
+                    </p>
+                  </div>
+
+                  <div className="border border-gold-border/20 bg-dark-surface/40 p-6 md:p-8">
+                    {isShort ? (
+                      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                        {/* Video Player (Vertical Short 9:16) */}
+                        <div className="md:col-span-6 flex justify-center">
+                          <div className="relative w-full max-w-[320px] aspect-[9/16] bg-black border border-gold-border/40 shadow-2xl overflow-hidden">
+                            {embedUrl ? (
+                              <iframe
+                                src={`${embedUrl}?rel=0&modestbranding=1`}
+                                title={`${project.name} Video Tour`}
+                                className="w-full h-full"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                              />
+                            ) : (
+                              <video
+                                controls
+                                className="w-full h-full object-cover"
+                                playsInline
+                              >
+                                <source src={project.videoUrl} type="video/mp4" />
+                              </video>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Video Details & Site Visit CTA */}
+                        <div className="md:col-span-6 flex flex-col space-y-5 text-left">
+                          <div className="space-y-2">
+                            <span className="inline-block px-3 py-1 bg-gold/10 border border-gold/30 text-gold text-[9px] uppercase tracking-widest font-bold">
+                              Featured Walkthrough
+                            </span>
+                            <h4 className="font-serif text-xl md:text-2xl font-bold text-warm-white">
+                              This Could Be Your Next Home In Sohna
+                            </h4>
+                            <p className="text-xs text-warm-muted leading-relaxed font-sans font-light">
+                              Step inside and get an authentic feel of the expansive layouts, elegant architecture, scenic Aravalli backdrop, and premium neighborhood amenities.
+                            </p>
+                          </div>
+
+                          <div className="space-y-2.5 pt-2 border-t border-gold-border/15">
+                            <div className="flex items-start space-x-2 text-xs text-warm-white font-sans">
+                              <Check className="w-4 h-4 text-gold shrink-0 mt-0.5" />
+                              <span>Independent 3 BHK boutique low-rise floors</span>
+                            </div>
+                            <div className="flex items-start space-x-2 text-xs text-warm-white font-sans">
+                              <Check className="w-4 h-4 text-gold shrink-0 mt-0.5" />
+                              <span>Dedicated stilt parking & private terrace rights</span>
+                            </div>
+                            <div className="flex items-start space-x-2 text-xs text-warm-white font-sans">
+                              <Check className="w-4 h-4 text-gold shrink-0 mt-0.5" />
+                              <span>5 mins from Sohna Elevated Highway & Expressways</span>
+                            </div>
+                          </div>
+
+                          <div className="pt-2 flex flex-wrap gap-3">
+                            <a
+                              href={project.videoUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center space-x-2 px-4 py-2.5 border border-gold-border/40 hover:border-gold text-warm-white hover:text-gold text-xs font-sans uppercase tracking-wider font-bold transition-colors"
+                            >
+                              <Play className="w-3.5 h-3.5 text-gold" />
+                              <span>Watch on YouTube</span>
+                              <ExternalLink className="w-3 h-3 text-warm-muted" />
+                            </a>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                const sidebarEl = document.getElementById("sidebar-name");
+                                if (sidebarEl) {
+                                  sidebarEl.scrollIntoView({ behavior: "smooth", block: "center" });
+                                  sidebarEl.focus();
+                                }
+                              }}
+                              className="inline-flex items-center space-x-2 px-4 py-2.5 bg-gold hover:bg-gold-light text-dark-bg text-xs font-sans uppercase tracking-wider font-bold transition-colors cursor-pointer"
+                            >
+                              <Calendar className="w-3.5 h-3.5" />
+                              <span>Book Site Visit</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      /* Standard 16:9 Video Player */
+                      <div className="space-y-4">
+                        <div className="relative aspect-video w-full bg-black border border-gold-border/40 shadow-2xl overflow-hidden">
+                          {embedUrl ? (
+                            <iframe
+                              src={`${embedUrl}?rel=0&modestbranding=1`}
+                              title={`${project.name} Video Tour`}
+                              className="w-full h-full"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                              allowFullScreen
+                            />
+                          ) : (
+                            <video
+                              controls
+                              className="w-full h-full object-cover"
+                              playsInline
+                            >
+                              <source src={project.videoUrl} type="video/mp4" />
+                            </video>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })()}
 
             {/* ======================================================
                 3. FLOOR & MASTER PLANS

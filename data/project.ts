@@ -185,7 +185,7 @@ export const projects: Project[] = [
       ]
     },
     brochureUrl: "[[Brochure PDF Download Link]]",
-    videoUrl: "/terra-elegance/cover-video.mp4",
+    videoUrl: "https://www.youtube.com/shorts/1HDmyEAHkZk",
     droneFootageUrl: "",
     virtualTourUrl: "[[3D Virtual Tour Walkthrough VR Link]]"
   },

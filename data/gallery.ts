@@ -6,7 +6,7 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/6.jpg",
     alt: "Terra Elegance Facade View",
     title: "Luxury Facade Exterior",
-    description: "Premium architectural exterior design of independent floors showcasing glass balconies and warm lighting.",
+    description: "",
     category: "exterior",
   },
   {
@@ -14,7 +14,7 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/living-room-dv-set.jpeg",
     alt: "Terra Elegance Living Area",
     title: "Premium floor Living Room",
-    description: "Spacious luxury living room featuring imported flooring, custom lighting paneling, and sliding glass windows.",
+    description: "",
     category: "interior",
   },
   {
@@ -22,7 +22,7 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/3d-view-kitchen.jpeg",
     alt: "Terra Elegance Kitchen",
     title: "Modular Kitchen",
-    description: "Contemporary kitchen layout featuring built-in appliances, quartz counter-tops, and clean cabinets.",
+    description: "",
     category: "interior",
   },
   {
@@ -30,7 +30,7 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/master-bedroom.jpeg",
     alt: "Master Bedroom Suite",
     title: "Wooden flooring in Master room",
-    description: "Premium bedroom design with wooden flooring, accent wall paneling, and panoramic glazing.",
+    description: "",
     category: "interior",
   },
   {
@@ -38,7 +38,7 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/master-bedroom-angle.jpeg",
     alt: "Master Bedroom Angle View",
     title: "Master Suite Balcony View",
-    description: "Detailed rendering of master bedroom showing spacious sliding doors opening to the Aravalli-facing balcony.",
+    description: "",
     category: "interior",
   },
   {
@@ -46,7 +46,7 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/7.jpg",
     alt: "Terra Elegance Evening View",
     title: "Evening Balcony Perspective",
-    description: "Digital design rendering of the premium main elevation under evening lights.",
+    description: "",
     category: "exterior",
   },
   {
@@ -54,23 +54,23 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/8.jpg",
     alt: "Terra Elegance Terrace Deck",
     title: "Terrace Deck Exterior",
-    description: "Private demarcated rooftop areas featuring landscaping, outdoor seating, and scenic range views.",
+    description: "",
     category: "exterior",
   },
-  {
-    id: "g8",
-    src: "/terra-elegance/3d-view/final-4.jpeg",
-    alt: "Architectural Frontage",
-    title: "Architectural Frontage Rendering",
-    description: "Digital elevation rendering showcasing the low-rise stilt parking and four floors format.",
-    category: "exterior",
-  },
+  // {
+  //   id: "g8",
+  //   src: "/terra-elegance/3d-view/final-4.jpeg",
+  //   alt: "Architectural Frontage",
+  //   title: "Architectural Frontage Rendering",
+  //   description: "Digital elevation rendering showcasing the low-rise stilt parking and four floors format.",
+  //   category: "exterior",
+  // },
   {
     id: "g9",
     src: "/terra-elegance/3d-view/guset-room.jpeg",
     alt: "Elegant Guest Room",
     title: "Elegant Guest Room",
-    description: "Warm and inviting guest bedroom with high-end vitrified tile flooring and designer wall finishes.",
+    description: "",
     category: "interior",
   },
   {
@@ -78,7 +78,7 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/kids-room.jpeg",
     alt: "Modern Kids Room",
     title: "Modern Kids Room",
-    description: "Thoughtfully themed kid's bedroom layout with ample natural lighting and integrated study area.",
+    description: "",
     category: "interior",
   },
   {
@@ -86,7 +86,7 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/kids-room-set.jpeg",
     alt: "Kids Room Corner Study",
     title: "Kids Room Corner Study",
-    description: "Spacious desk set design with custom wall cabinets for children's learning activities.",
+    description: "",
     category: "interior",
   },
   {
@@ -94,7 +94,7 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/kids-room-2.jpeg",
     alt: "Kids Playful Bedroom",
     title: "Kids Playful Bedroom",
-    description: "Secondary bedroom render showcasing modular cupboards and sleek study table.",
+    description: "",
     category: "interior",
   },
   {
@@ -102,7 +102,7 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/view-1.jpeg",
     alt: "Lobby Area Renders",
     title: "Stilt Lobby & Parking",
-    description: "Grand entrance lobby with stilt height, high-speed lift, and wide driving lanes.",
+    description: "",
     category: "exterior",
   },
   {
@@ -110,7 +110,7 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/view-2.jpeg",
     alt: "Lobby Area Renders",
     title: "Stilt Lobby & Parking",
-    description: "Grand entrance lobby with stilt height, high-speed lift, and wide driving lanes.",
+    description: "",
     category: "exterior",
   },
   {
@@ -118,7 +118,7 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/view-3.jpeg",
     alt: "Exterior Enclave Landscaping",
     title: "Green Walking Path View",
-    description: "Landscaped walking pathways, botanical enclaves, and children's play areas.",
+    description: "",
     category: "exterior",
   },
   // {
@@ -150,7 +150,7 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/view-6.jpeg",
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
-    description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
+    description: "",
     category: "interior",
   },
   {
@@ -158,7 +158,7 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/view-7.jpeg",
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
-    description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
+    description: "",
     category: "interior",
   },
   {
@@ -166,7 +166,7 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/view-9.jpeg",
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
-    description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
+    description: "",
     category: "interior",
   },
   {
@@ -174,23 +174,23 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/view-8.jpeg",
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
-    description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
+    description: "",
     category: "interior",
   },
-  {
-    id: "g23",
-    src: "/terra-elegance/3d-view/view-10.jpeg",
-    alt: "Structure Slab Casting",
-    title: "Superstructure RCC Framing",
-    description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
-    category: "interior",
-  },
+  // {
+  //   id: "g23",
+  //   src: "/terra-elegance/3d-view/view-10.jpeg",
+  //   alt: "Structure Slab Casting",
+  //   title: "Superstructure RCC Framing",
+  //   description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
+  //   category: "interior",
+  // },
   {
     id: "g24",
     src: "/terra-elegance/3d-view/view-11.jpeg",
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
-    description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
+    description: "",
     category: "interior",
   },
   {
@@ -198,7 +198,7 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/view-12.jpeg",
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
-    description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
+    description: "",
     category: "interior",
   },
   {
@@ -206,23 +206,23 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/view-13.jpeg",
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
-    description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
+    description: "",
     category: "interior",
   },
-  {
-    id: "g27",
-    src: "/terra-elegance/3d-view/view-14.jpeg",
-    alt: "Structure Slab Casting",
-    title: "Superstructure RCC Framing",
-    description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
-    category: "interior",
-  },
+  // {
+  //   id: "g27",
+  //   src: "/terra-elegance/3d-view/view-14.jpeg",
+  //   alt: "Structure Slab Casting",
+  //   title: "Superstructure RCC Framing",
+  //   description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
+  //   category: "interior",
+  // },
   {
     id: "g28",
     src: "/terra-elegance/3d-view/view-15.jpeg",
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
-    description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
+    description: "",
     category: "interior",
   },
   {
@@ -230,7 +230,7 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/view-16.jpeg",
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
-    description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
+    description: "",
     category: "interior",
   },
   {
@@ -238,7 +238,7 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/view-17.jpeg",
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
-    description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
+    description: "",
     category: "interior",
   },
   {
@@ -246,7 +246,7 @@ export const galleryImages: GalleryImage[] = [
     src: "/terra-elegance/3d-view/view-18.jpeg",
     alt: "Structure Slab Casting",
     title: "Superstructure RCC Framing",
-    description: "RCC frame structure columns and ceiling slab casting ongoing under expert quality supervision.",
+    description: "",
     category: "interior",
   }
 ];

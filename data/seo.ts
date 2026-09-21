@@ -49,7 +49,8 @@ export const generateLocalBusinessSchema = (company: any) => {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "name": company.name,
-    "image": "https://terrainfracon.com/assets/logo.png",
+    "image": "https://terrainfracon.com/TerraInfraconLogo.png",
+    "logo": "https://terrainfracon.com/TerraInfraconLogo.png",
     "@id": "https://terrainfracon.com/#local-business",
     "url": "https://terrainfracon.com",
     "telephone": company.phone,
@@ -131,7 +132,7 @@ export const generateBlogArticleSchema = (post: any, company: any) => {
       "name": company.name,
       "logo": {
         "@type": "ImageObject",
-        "url": "https://terrainfracon.com/assets/logo.png",
+        "url": "https://terrainfracon.com/TerraInfraconLogo.png",
       },
     },
     "mainEntityOfPage": {
